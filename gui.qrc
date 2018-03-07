@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/window/thick_opaque-background.png</file>
+        <file>assets/window/thick_opaque-border-botleft.png</file>
+        <file>assets/window/thick_opaque-border-botright.png</file>
+        <file>assets/window/thick_opaque-border-bottom.png</file>
+        <file>assets/window/thick_opaque-border-left.png</file>
+        <file>assets/window/thick_opaque-border-right.png</file>
+        <file>assets/window/thick_opaque-border-top.png</file>
+        <file>assets/window/thick_opaque-border-topleft.png</file>
+        <file>assets/window/thick_opaque-border-topright.png</file>
+    </qresource>
+</RCC>
