@@ -13,80 +13,84 @@ protected:
 
 private:
 	//personal growth
-	int experience_;
-	int level_;
+	double experience_;
+	double level_;
 
 	//connect with events
-	int active_points_;
-	int initiative_;
+	double active_points_;
+	double initiative_;
 
 	//movement
 	std::pair <int, int> location_; //x - first, y - second
-	int movement_speed_;
+	double movement_speed_;
 
 	//attack action
-	int agility_;
-	int attack_range_;
-	int damage_per_hit_;
-	int energy_points_;  //for physical attacks
-	int intelligence_;
-	int mana_points_;    //for magic attacks
-	int strength_;
+	double agility_;
+	double attack_range_;
+	double damage_per_hit_;
+	double energy_points_;  //for physical attacks
+	double intelligence_;
+	double mana_points_;    //for magic attacks
+	double strength_;
 
 	//durability
-	int health_points_;
-	int magic_defence_;
-	int physic_defence_;
+	double health_points_;
+	double magic_defence_;  //less or equal 40
+	double physic_defence_; //less or equal 40
 
 public:
 	Unit();
 	virtual ~Unit() = delete;
 
-	int getExperience();
-	void setExperience(int value);
+	double getExperience();
+	void setExperience(double value);
 
-	int getLevel();
-	void setLevel(int value);
+	double getLevel();
+	void setLevel(double value);
 
-	int getHealthPoints();
-	void setHealthPoints(int value);
+	double getHealthPoints();
+	void setHealthPoints(double value);
 
-	int getManaPoints();
-	void setManaPoints(int value);
+	double getManaPoints();
+	void setManaPoints(double value);
 
-	int getEnergyPoints();
-	void setEnergyPoints(int value);
+	double getEnergyPoints();
+	void setEnergyPoints(double value);
 
-	int getActivePoints();
-	void setActivePoints(int value);
+	double getActivePoints();
+	void setActivePoints(double value);
 
-	int getAttackRange();
-	void setAttackRange(int value);
+	double getAttackRange();
+	void setAttackRange(double value);
 
 	std::pair<int, int> getLocation();
-	void setLocation(int x, int y);
+	void setLocation(double x, double y);
 
-	int getMovementSpeed();
-	void setMovementSpeed(int value);
+	double getMovementSpeed();
+	void setMovementSpeed(double value);
 
-	int getInitiative_();
-	void setInitiative_(int value);
+	double getInitiative_();
+	void setInitiative_(double value);
 
-	int getDamagePerHit();
-	void setDamagePerHit(int value);
+	double getDamagePerHit();
+	void setDamagePerHit(double value);
 
-	int getIntelligence();
-	void setIntelligence(int value);
+	double getIntelligence();
+	void setIntelligence(double value);
 
-	int getStrength();
-	void setStrength(int value);
+	double getStrength();
+	void setStrength(double value);
 
-	int getAgility();
-	void setAgility(int value);
+	double getAgility();
+	void setAgility(double value);
 
-	int getMagicDefence();
-	void setMagicDefence(int value);
+	double getMagicDefence();
+	void setMagicDefence(double value);
 
-	int getPhysicDefence();
-	void setPhysicDefence(int value);
+	double getPhysicDefence();
+	void setPhysicDefence(double value);
+
+	virtual void calculateDamagePerHit();
+
+	double reduceIncomingDamage(std::string damageType, int value);
 };

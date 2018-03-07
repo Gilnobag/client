@@ -1,138 +1,146 @@
 #pragma once
 #include <iostream>
+#include <algorithm>
+#include <cassert>
+#include <string>
 #include "unit.h"
 
 Unit::Unit(){}
 
-int Unit::getExperience() {
+double Unit::getExperience() {
 	return experience_;
 }
-void Unit::setExperience(int value) {
+void Unit::setExperience(double value) {
 	experience_ = value;
 }
 
-int Unit::getExperience() {
-	return experience_;
-}
-void Unit::setExperience(int value) {
-	experience_ = value;
-}
-
-int Unit::getExperience() {
-	return experience_;
-}
-void Unit::setExperience(int value) {
-	experience_ = value;
-}
-
-int Unit::getExperience() {
-	return experience_;
-}
-void Unit::setExperience(int value) {
-	experience_ = value;
-}
-
-int Unit::getLevel() {
+double Unit::getLevel() {
 	return level_;
 };
-void Unit::setLevel(int value) {
+void Unit::setLevel(double value) {
 	level_ = value;
 }
 
-int Unit::getHealthPoints() {
+double Unit::getHealthPoints() {
 	return health_points_;
 };
-void Unit::setHealthPoints(int value) {
+void Unit::setHealthPoints(double value) {
 	health_points_ = value;
 }
 
-int Unit::getManaPoints() {
+double Unit::getManaPoints() {
 	return mana_points_;
 }
-void Unit::setManaPoints(int value) {
+void Unit::setManaPoints(double value) {
 	mana_points_ = value;
 }
 
-int Unit::getEnergyPoints() {
+double Unit::getEnergyPoints() {
 	return energy_points_;
 }
-void Unit::setEnergyPoints(int value) {
+void Unit::setEnergyPoints(double value) {
 	energy_points_ = value;
 }
 
-int Unit::getActivePoints() {
+double Unit::getActivePoints() {
 	return active_points_;
 }
-void Unit::setActivePoints(int value) {
+void Unit::setActivePoints(double value) {
 	active_points_ = value;
 }
 
-int Unit::getAttackRange() {
+double Unit::getAttackRange() {
 	return attack_range_;
 }
-void Unit::setAttackRange(int value) {
+void Unit::setAttackRange(double value) {
 	attack_range_ = value;
 }
 
 std::pair<int, int> Unit::getLocation() {
 	return location_;
 }
-void Unit::setLocation(int x, int y) {
+void Unit::setLocation(double x, double y) {
 	location_ = std::make_pair(x, y);
 }
 
-int Unit::getMovementSpeed() {
+double Unit::getMovementSpeed() {
 	return movement_speed_;
 }
-void Unit::setMovementSpeed(int value) {
+void Unit::setMovementSpeed(double value) {
 	movement_speed_ = value;
 }
 
-int Unit::getInitiative_() {
+double Unit::getInitiative_() {
 	return initiative_;
 }
-void Unit::setInitiative_(int value) {
+void Unit::setInitiative_(double value) {
 	initiative_ = value;
 }
 
-int Unit::getDamagePerHit() {
+double Unit::getDamagePerHit() {
 	return damage_per_hit_;
 }
-void Unit::setDamagePerHit(int value) {
+void Unit::setDamagePerHit(double value) {
 	damage_per_hit_ = value;
 }
 
-int Unit::getIntelligence() {
+double Unit::getIntelligence() {
 	return intelligence_;
 }
-void Unit::setIntelligence(int value) {
+void Unit::setIntelligence(double value) {
 	intelligence_ = value;
 }
 
-int Unit::getStrength() {
+double Unit::getStrength() {
 	return strength_;
 }
-void Unit::setStrength(int value) {
+void Unit::setStrength(double value) {
 	strength_ = value;
 }
 
-int Unit::getAgility() {
+double Unit::getAgility() {
 	return agility_;
 }
-void Unit::setAgility(int value) {
+void Unit::setAgility(double value) {
 	agility_ = value;
 }
 
-int Unit::getMagicDefence() {
+double Unit::getMagicDefence() {
 	return magic_defence_;
 }
-void Unit::setMagicDefence(int value) {
+void Unit::setMagicDefence(double value) {
 	magic_defence_ = value;
 }
 
-int Unit::getPhysicDefence() {
+double Unit::getPhysicDefence() {
 	return physic_defence_;
 }
-void Unit::setPhysicDefence(int value) {
+void Unit::setPhysicDefence(double value) {
 	physic_defence_ = value;
+}
+
+void Unit::calculateDamagePerHit() {
+	damage_per_hit_ = 0.5 * std::max(getAgility(), std::max(getStrength(), getIntelligence()));
+}
+
+double Unit::reduceIncomingDamage(std::string damageType, int damage) { //returns damage after reducing by defence
+	assert("Incorrect damage type in call reduceIncomingDamage(), expected one of {p*, P*, m*, M*}", 
+		damageType[0] == 'p' || damageType[0] == 'P' || damageType[0] == 'm' || damageType[0] == 'M');
+
+	if (damageType[0] == 'p' || damageType[0] == 'P') {
+		return (1 - 2.5 * physic_defence_ / 100) * damage;
+	}
+	else if (damageType[0] == 'm' || damageType[0] == 'M') {
+		return (1 - 2.5 * magic_defence_ / 100) * damage;
+	}
+}
+
+int main() {
+	//testing correctness of formul
+	int a, b;
+	Unit* test = new Unit();
+	test->setMagicDefence(5);
+	test->setPhysicDefence(40);
+	std::cout << test->reduceIncomingDamage("m", 100) << std::endl;
+	std::cout << test->reduceIncomingDamage("p", 100);
 }
