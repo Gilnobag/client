@@ -124,9 +124,10 @@ void Unit::calculateDamagePerHit() {
 }
 
 double Unit::reduceIncomingDamage(std::string damageType, int damage) { //returns damage after reducing by defence
-	assert("Incorrect damage type in call reduceIncomingDamage(), expected one of {p*, P*, m*, M*}", 
+	assert("Incorrect damage type in call reduceIncomingDamage(), expected" &&
 		damageType[0] == 'p' || damageType[0] == 'P' || damageType[0] == 'm' || damageType[0] == 'M');
-
+	assert("Magic defence of unit is incorrectly high (>40), but must be" && magic_defence_ <= 40);
+	assert("Physic defence of unit is incorrectly high (>40), but must be" && physic_defence_ <= 40);
 	if (damageType[0] == 'p' || damageType[0] == 'P') {
 		return (1 - 2.5 * physic_defence_ / 100) * damage;
 	}
