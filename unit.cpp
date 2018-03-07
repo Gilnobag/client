@@ -135,13 +135,3 @@ double Unit::reduceIncomingDamage(std::string damageType, int damage) { //return
 		return (1 - 2.5 * magic_defence_ / 100) * damage;
 	}
 }
-
-int main() {
-	//testing correctness of formul
-	int a, b;
-	Unit* test = new Unit();
-	test->setMagicDefence(5);
-	test->setPhysicDefence(40);
-	std::cout << test->reduceIncomingDamage("m", 100) << std::endl;
-	std::cout << test->reduceIncomingDamage("p", 100);
-}
