@@ -11,7 +11,7 @@ public:
 	bool isEmpty() {
 		return true;
 	}
-	std::vector <Cell*> actualPath(Cell* to) {
+	std::vector <Cell*> actualPath(Cell* destination) { //the shortest existing path from (*this) to (*destination)
 		std::vector <Cell*> path;
 		return path;
 	}
@@ -27,13 +27,12 @@ private:
 	double experience_;
 	double level_;
 
-	//connect with events
-	double active_points_;
+	//actions and events
 	double initiative_;
 
 	//movement
 	Cell* location_;
-	double movement_speed_; //how many cells can move for one activity point
+	double movement_points_; //how many cells can move for one activity point
 
 	//attack action
 	double agility_;
@@ -68,17 +67,14 @@ public:
 	double getEnergyPoints();
 	void setEnergyPoints(double value);
 
-	double getActivePoints();
-	void setActivePoints(double value);
-
 	double getAttackRange();
 	void setAttackRange(double value);
 
 	Cell* getLocation();
 	void setLocation(Cell* to);
 
-	double getMovementSpeed();
-	void setMovementSpeed(double value);
+	int getMovementPoints();
+	void setMovementPoints(int value);
 
 	double getInitiative();
 	void setInitiative(double value);
@@ -105,9 +101,13 @@ public:
 
 	double reduceIncomingDamage(std::string damageType, int value);
 
+	int lenOfActualPath(Cell* destination);
+
 	bool canMoveForDistance(int distance);
 
-	bool Unit::canMoveToCell(Cell* to);
+	bool canMoveToCell(Cell* destination);
 
+	void moveToCell(Cell* destination);
+	
 //	bool canAttackForDistance(int distance);
 };

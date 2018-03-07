@@ -5,7 +5,7 @@
 #include <string>
 #include "unit.h"
 
-Unit::Unit(){}
+Unit::Unit() {}
 
 double Unit::getExperience() {
 	return experience_;
@@ -42,13 +42,6 @@ void Unit::setEnergyPoints(double value) {
 	energy_points_ = value;
 }
 
-double Unit::getActivePoints() {
-	return active_points_;
-}
-void Unit::setActivePoints(double value) {
-	active_points_ = value;
-}
-
 double Unit::getAttackRange() {
 	return attack_range_;
 }
@@ -63,11 +56,11 @@ void Unit::setLocation(Cell* to) {
 	location_ = to;
 }
 
-double Unit::getMovementSpeed() {
-	return movement_speed_;
+int Unit::getMovementPoints() {
+	return movement_points_;
 }
-void Unit::setMovementSpeed(double value) {
-	movement_speed_ = value;
+void Unit::setMovementPoints(int value) {
+	movement_points_ = value;
 }
 
 double Unit::getInitiative() {
@@ -136,20 +129,30 @@ double Unit::reduceIncomingDamage(std::string damageType, int damage) { //return
 	}
 }
 
-bool Unit::canMoveForDistance(int distance) {
-	if (active_points_ >= double(distance) / movement_speed_) {
-		return true;
-	}
-	else return false;
+int Unit::lenOfActualPath(Cell* destination) {
+	return getLocation()->actualPath(destination).size();
 }
 
-bool Unit::canMoveToCell(Cell* to) {
-	if (to->isEmpty() && canMoveForDistance(getLocation()->actualPath(to).size())) {
-		return true;
+bool Unit::canMoveForDistance(int distance) {
+	return (movement_points_ >= distance);
+}
+
+bool Unit::canMoveToCell(Cell* destination) {
+	return (destination->isEmpty() && canMoveForDistance(lenOfActualPath(destination)));
+}
+
+void Unit::moveToCell(Cell* destination) {
+	if (!canMoveToCell)
+		return;	//here could be a gui-message about failed move (x-mark, for example)
+	else {
+		int decreasedValue = getMovementPoints() - lenOfActualPath(destination);
+		setMovementPoints(decreasedValue);
+		setLocation(destination);
 	}
-	else return false;
 }
 
 /*bool canAttack(int distance) {
 
 }*/
+
+//TODO: real_x_, real_y_, ptr to player
