@@ -70,10 +70,10 @@ void Unit::setMovementSpeed(double value) {
 	movement_speed_ = value;
 }
 
-double Unit::getInitiative_() {
+double Unit::getInitiative() {
 	return initiative_;
 }
-void Unit::setInitiative_(double value) {
+void Unit::setInitiative(double value) {
 	initiative_ = value;
 }
 
@@ -135,3 +135,21 @@ double Unit::reduceIncomingDamage(std::string damageType, int damage) { //return
 		return (1 - 2.5 * magic_defence_ / 100) * damage;
 	}
 }
+
+bool Unit::canMoveForDistance(int distance) {
+	if (active_points_ >= double(distance) / movement_speed_) {
+		return true;
+	}
+	else return false;
+}
+
+bool Unit::canMoveToCell(Cell* to) {
+	if (to->isEmpty() && canMoveForDistance(to->actualPath.size())) {
+		return true;
+	}
+	else return false;
+}
+
+/*bool canAttack(int distance) {
+
+}*/

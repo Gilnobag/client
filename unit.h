@@ -3,10 +3,18 @@
 #include <vector>
 
 class Spell {
-	//empty for allow to compile
+	//waiting for a realisation
 };
 class Cell {
-	//waiting a realisation
+	//waiting for a realisation
+public:
+	bool isEmpty() {
+		return true;
+	}
+	std::vector <Cell*> actualPath() {
+		std::vector <Cell*> path;
+		return path;
+	}
 };
 
 class Unit {
@@ -24,8 +32,8 @@ private:
 	double initiative_;
 
 	//movement
-	Cell* location_; //x - first, y - second
-	double movement_speed_;
+	Cell* location_;
+	double movement_speed_; //how many cells can move for one activity point
 
 	//attack action
 	double agility_;
@@ -96,4 +104,10 @@ public:
 	virtual void calculateDamagePerHit();
 
 	double reduceIncomingDamage(std::string damageType, int value);
+
+	bool canMoveForDistance(int distance);
+
+	bool Unit::canMoveToCell(Cell* to);
+
+//	bool canAttackForDistance(int distance);
 };
