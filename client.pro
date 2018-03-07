@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-03-07T00:52:24
+# Project created by QtCreator 2018-03-07T02:18:16
 #
 #-------------------------------------------------
 
@@ -25,10 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        gui.cpp \
+    recruitmentscene.cpp
 
 HEADERS += \
-        mainwindow.h
+        gui.h \
+    recruitmentscene.h
 
 FORMS += \
-        mainwindow.ui
+        gui.ui \
+    recruitmentscene.ui
+
+RESOURCES += \
+    gui.qrc
