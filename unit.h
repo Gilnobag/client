@@ -11,7 +11,7 @@ public:
 	bool isEmpty() {
 		return true;
 	}
-	std::vector <Cell*> actualPath() {
+	std::vector <Cell*> actualPath(Cell* to) {
 		std::vector <Cell*> path;
 		return path;
 	}

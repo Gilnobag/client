@@ -144,7 +144,7 @@ bool Unit::canMoveForDistance(int distance) {
 }
 
 bool Unit::canMoveToCell(Cell* to) {
-	if (to->isEmpty() && canMoveForDistance(to->actualPath.size())) {
+	if (to->isEmpty() && canMoveForDistance(getLocation()->actualPath(to).size())) {
 		return true;
 	}
 	else return false;
