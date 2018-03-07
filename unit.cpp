@@ -56,11 +56,11 @@ void Unit::setAttackRange(double value) {
 	attack_range_ = value;
 }
 
-std::pair<int, int> Unit::getLocation() {
+Cell* Unit::getLocation() {
 	return location_;
 }
-void Unit::setLocation(double x, double y) {
-	location_ = std::make_pair(x, y);
+void Unit::setLocation(Cell* to) {
+	location_ = to;
 }
 
 double Unit::getMovementSpeed() {

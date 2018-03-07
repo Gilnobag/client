@@ -5,6 +5,9 @@
 class Spell {
 	//empty for allow to compile
 };
+class Cell {
+	//waiting a realisation
+};
 
 class Unit {
 
@@ -21,7 +24,7 @@ private:
 	double initiative_;
 
 	//movement
-	std::pair <int, int> location_; //x - first, y - second
+	Cell* location_; //x - first, y - second
 	double movement_speed_;
 
 	//attack action
@@ -63,14 +66,14 @@ public:
 	double getAttackRange();
 	void setAttackRange(double value);
 
-	std::pair<int, int> getLocation();
-	void setLocation(double x, double y);
+	Cell* getLocation();
+	void setLocation(Cell* to);
 
 	double getMovementSpeed();
 	void setMovementSpeed(double value);
 
-	double getInitiative_();
-	void setInitiative_(double value);
+	double getInitiative();
+	void setInitiative(double value);
 
 	double getDamagePerHit();
 	void setDamagePerHit(double value);
