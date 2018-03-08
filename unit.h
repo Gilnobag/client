@@ -23,9 +23,10 @@ protected:
 	std::vector <Spell> skills_;
 
 private:
-	//personal growth
+	//personal information
 	double experience_;
 	double level_;
+	std::string race_; //lower case
 
 	//actions and events
 	double initiative_;
@@ -33,6 +34,8 @@ private:
 	//movement
 	Cell* location_;
 	double movement_points_; //how many cells can move for one activity point
+	double real_x_;
+	double real_y_;
 
 	//attack action
 	double agility_;
@@ -97,17 +100,26 @@ public:
 	double getPhysicDefence();
 	void setPhysicDefence(double value);
 
+	std::string getRace();
+	void setRace(std::string new_race);
+
+	double getRealX();
+	void setRealX(double x);
+
+	double getRealY();
+	void setRealY(double y);
+
 	virtual void calculateDamagePerHit();
 
-	double reduceIncomingDamage(std::string damageType, int value);
+	virtual double reduceIncomingDamage(std::string damageType, int value);
 
 	int lenOfActualPath(Cell* destination);
 
-	bool canMoveForDistance(int distance);
+	virtual bool canMoveForDistance(int distance);
 
-	bool canMoveToCell(Cell* destination);
+	virtual bool canMoveToCell(Cell* destination);
 
-	void moveToCell(Cell* destination);
+	virtual void moveToCell(Cell* destination);
 	
 //	bool canAttackForDistance(int distance);
 };

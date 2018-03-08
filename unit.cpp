@@ -112,6 +112,27 @@ void Unit::setPhysicDefence(double value) {
 	physic_defence_ = value;
 }
 
+std::string Unit::getRace() {
+	return race_;
+}
+void Unit::setRace(std::string new_race) {
+	race_ = new_race;
+}
+
+double Unit::getRealX() {
+	return real_x_;
+}
+void Unit::setRealX(double x) {
+	real_x_ = x;
+}
+
+double Unit::getRealY() {
+	return real_y_;
+}
+void Unit::setRealY(double y) {
+	real_y_ = y;
+}
+
 void Unit::calculateDamagePerHit() {
 	damage_per_hit_ = 0.5 * std::max(getAgility(), std::max(getStrength(), getIntelligence()));
 }
@@ -151,8 +172,10 @@ void Unit::moveToCell(Cell* destination) {
 	}
 }
 
+
+
 /*bool canAttack(int distance) {
 
 }*/
 
-//TODO: real_x_, real_y_, ptr to player
+//TODO: real_x_, real_y_
