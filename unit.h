@@ -30,10 +30,11 @@ private:
 
 	//actions and events
 	double initiative_;
+	int activity_points_;
 
 	//movement
 	Cell* location_;
-	double movement_points_; //how many cells can move for one activity point
+	int movement_speed_;	//how many cells can move for one activity point
 	double real_x_;
 	double real_y_;
 
@@ -41,10 +42,9 @@ private:
 	double agility_;
 	double attack_range_;
 	double damage_per_hit_;
-	double energy_points_;  //for physical attacks
 	double intelligence_;
-	double mana_points_;    //for magic attacks
 	double strength_;
+	int attack_cost_;     //how many activity points does attack cost
 
 	//durability
 	double health_points_;
@@ -64,20 +64,20 @@ public:
 	double getHealthPoints();
 	void setHealthPoints(double value);
 
-	double getManaPoints();
-	void setManaPoints(double value);
-
-	double getEnergyPoints();
-	void setEnergyPoints(double value);
-
 	double getAttackRange();
 	void setAttackRange(double value);
+
+	int getActivityPoints();
+	void setActivityPoints(int value);
 
 	Cell* getLocation();
 	void setLocation(Cell* to);
 
-	int getMovementPoints();
-	void setMovementPoints(int value);
+	int getMovementSpeed();
+	void setMovementSpeed(int value);
+
+	int getAttackCost();
+	void setAttackCost(int value);
 
 	double getInitiative();
 	void setInitiative(double value);
@@ -93,6 +93,9 @@ public:
 
 	double getAgility();
 	void setAgility(double value);
+
+	int getAttackPoints();
+	void setAttackPoints(int value);
 
 	double getMagicDefence();
 	void setMagicDefence(double value);
@@ -121,5 +124,41 @@ public:
 
 	virtual void moveToCell(Cell* destination);
 	
-//	bool canAttackForDistance(int distance);
+	virtual	bool canAttackForDistance(int distance) = 0;
+
+	virtual bool canAttackToCell(Cell* destination) = 0;
+
+	virtual bool canAttackUnit(Unit* target) = 0;
 };
+
+class MeleeUnit : public Unit {
+protected:
+private:
+
+public:
+	virtual ~MeleeUnit() = delete;
+
+	virtual	bool canAttackForDistance(int distance);
+
+	virtual bool canAttackToCell(Cell* destination);
+
+	virtual bool canAttackUnit(Unit* target);
+
+};
+
+class RangeUnit : public Unit {
+protected:
+private:
+
+public:
+	virtual ~RangeUnit() = delete;
+};
+
+template <class Base>
+class AbstractUnitCreator {
+public:
+	AbstractUnitCreator() {}
+	virtual ~AbstractUnitCreator() {}
+	virtual Base* create() const = 0;
+};
+

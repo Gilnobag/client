@@ -28,25 +28,18 @@ void Unit::setHealthPoints(double value) {
 	health_points_ = value;
 }
 
-double Unit::getManaPoints() {
-	return mana_points_;
-}
-void Unit::setManaPoints(double value) {
-	mana_points_ = value;
-}
-
-double Unit::getEnergyPoints() {
-	return energy_points_;
-}
-void Unit::setEnergyPoints(double value) {
-	energy_points_ = value;
-}
-
 double Unit::getAttackRange() {
 	return attack_range_;
 }
 void Unit::setAttackRange(double value) {
 	attack_range_ = value;
+}
+
+int Unit::getActivityPoints(){
+	return activity_points_;
+}
+void Unit::setActivityPoints(int value){
+	activity_points_ = value;
 }
 
 Cell* Unit::getLocation() {
@@ -56,11 +49,18 @@ void Unit::setLocation(Cell* to) {
 	location_ = to;
 }
 
-int Unit::getMovementPoints() {
-	return movement_points_;
+int Unit::getMovementSpeed() {
+	return movement_speed_;
 }
-void Unit::setMovementPoints(int value) {
-	movement_points_ = value;
+void Unit::setMovementSpeed(int value) {
+	movement_speed_ = value;
+}
+
+int Unit::getAttackSpeed(){
+	return attack_speed_;
+}
+void Unit::setAttackSpeed(int value){
+	attack_speed_ = value;
 }
 
 double Unit::getInitiative() {
@@ -96,6 +96,13 @@ double Unit::getAgility() {
 }
 void Unit::setAgility(double value) {
 	agility_ = value;
+}
+
+int Unit::getAttackPoints(){
+	return attack_speed_;
+}
+void Unit::setAttackPoints(int value){
+	attack_speed_ = value;
 }
 
 double Unit::getMagicDefence() {
@@ -155,27 +162,27 @@ int Unit::lenOfActualPath(Cell* destination) {
 }
 
 bool Unit::canMoveForDistance(int distance) {
-	return (movement_points_ >= distance);
+	return (movement_speed_ >= distance);
 }
 
 bool Unit::canMoveToCell(Cell* destination) {
-	return (destination->isEmpty() && canMoveForDistance(lenOfActualPath(destination)));
-}
+	return (destination->isEmpty() && lenOfActualPath(destination) > 0 && canMoveForDistance(lenOfActualPath(destination)));
+}	
 
 void Unit::moveToCell(Cell* destination) {
-	if (!canMoveToCell)
+	if (!canMoveToCell(destination))
 		return;	//here could be a gui-message about failed move (x-mark, for example)
 	else {
-		int decreasedValue = getMovementPoints() - lenOfActualPath(destination);
-		setMovementPoints(decreasedValue);
+		int decreasedValue = getMovementSpeed() - lenOfActualPath(destination);
+		setMovementSpeed(decreasedValue);
 		setLocation(destination);
 	}
 }
 
+int main() {
+	std::cout << "Hello, world!\n";
+}
 
-
-/*bool canAttack(int distance) {
-
-}*/
-
-//TODO: real_x_, real_y_
+bool MeleeUnit::canAttackForDistance(int distance) {	
+//	if 
+}
