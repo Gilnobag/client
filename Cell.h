@@ -10,6 +10,7 @@ private:
 	Cell *upLeft_;
 	Cell *up_;
 	Cell *upRight_;
+	
 	Cell * downLeft_;
 	Cell *down_;
 	Cell *downRight_;

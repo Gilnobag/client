@@ -1,16 +1,7 @@
 #include "Cell.h"
+#include "unit.h"
 #include <queue>
 #include <vector>
-//***************
-//Дайте мне класс Юнит
-//Мне блять все это проверить надо
-//Слава Сишарп
-//***************
-struct Unit {
-	bool canAttack(int distance) {
-		return true;
-	}
-};
 
 Cell::Cell(Unit & character) {
 	upLeft_ = up_ = upRight_ = nullptr;
