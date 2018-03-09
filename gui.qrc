@@ -9,5 +9,6 @@
         <file>assets/window/thick_opaque-border-top.png</file>
         <file>assets/window/thick_opaque-border-topleft.png</file>
         <file>assets/window/thick_opaque-border-topright.png</file>
+        <file>assets/recruitscene/divider.png</file>
     </qresource>
 </RCC>

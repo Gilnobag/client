@@ -27,7 +27,6 @@ void GUI::mouseMoveEvent( QMouseEvent* e ) {
             return;
         }
         QString cname = child->metaObject()->className();
-        qDebug() << cname;
         if (cname != "QPushButton" && cname != "QComboBox"){ // отключаем перетягивание при наведение на активные элементы
             setGeometry(pos().x() + ( e->x() - dx_ ), pos().y() + ( e->y() - dy_ ), width(), height());
         } else {

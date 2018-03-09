@@ -26,11 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         gui.cpp \
-    recruitmentscene.cpp
+    recruitmentscene.cpp \
+    unitfactory.cpp \
+    unit.cpp
 
 HEADERS += \
         gui.h \
-    recruitmentscene.h
+    recruitmentscene.h \
+    unitfactory.h \
+    unit.h
 
 FORMS += \
         gui.ui \
