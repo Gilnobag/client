@@ -1,11 +1,7 @@
 #include "Cell.h"
 #include <queue>
 #include <vector>
-//***************
-//Дайте мне класс Юнит
-//Мне блять все это проверить надо
-//Слава Сишарп
-//***************
+
 struct Unit {
 	bool canAttack(int distance) {
 		return true;
@@ -172,7 +168,7 @@ void Cell::RecalculateTableWithCenterThisPoint() {
 	handleAllMoveableCellsAndUnmoveableCells_(qWithoutMoveable);
 	handleAllUnmoveableCells_(qWithoutMoveable);
 }
-std::vector <Cell*> Cell::actualPath(Cell* to) {//std::vector<Cell*> включается в себя и this, и end
+std::vector <Cell*> Cell::actualPath(Cell* to) {//std::vector<Cell*> ГўГЄГ«ГѕГ·Г ГҐГІГ±Гї Гў Г±ГҐГЎГї ГЁ this, ГЁ end
 	if (!to || !to->getisMoveable())return std::vector<Cell*>();
 	auto ret = std::vector<Cell*>(1, to);
 	while (to != this) {
