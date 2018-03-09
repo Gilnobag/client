@@ -22,32 +22,37 @@ void GUI::mouseMoveEvent( QMouseEvent* e ) {
     if( e->buttons() | Qt::LeftButton ) {
         QPoint pt=mapFromGlobal(QCursor::pos());
         QWidget* child=childAt(pt);
+
         if (child == 0) {
-            setGeometry(pos().x() + ( e->x() - dx_ ), pos().y() + ( e->y() - dy_ ), width(), height());
+            setGeometry(pos().x() + (pt.x() - dx_ ), pos().y() + (pt.y() - dy_ ), width(), height());
+        //    dx_ = pt.x();
+        //    dy_ = pt.y();
             return;
         }
         QString cname = child->metaObject()->className();
         if (cname != "QPushButton" && cname != "QComboBox"){ // отключаем перетягивание при наведение на активные элементы
-            setGeometry(pos().x() + ( e->x() - dx_ ), pos().y() + ( e->y() - dy_ ), width(), height());
+            setGeometry(pos().x() + ( pt.x() - dx_ ), pos().y() + ( pt.y() - dy_ ), width(), height());
         } else {
-            dx_ = e->x();
-            dy_ = e->y();
+            dx_ = pt.x();
+            dy_ = pt.y();
         }
     }
 }
 
 void GUI::mousePressEvent( QMouseEvent* e ) {
     if( e->button() == Qt::LeftButton ) {
-        dx_ = e->x();
-        dy_ = e->y();
+        QPoint pt=mapFromGlobal(QCursor::pos());
+        dx_ = pt.x();
+        dy_ = pt.y();
         setCursor( Qt::OpenHandCursor );
     }
 }
 
 void GUI::mouseReleaseEvent( QMouseEvent* e ) {
     if( e->button() == Qt::LeftButton ) {
+        QPoint pt=mapFromGlobal(QCursor::pos());
         setCursor( Qt::ArrowCursor );
-        dx_ = e->x();
-        dy_ = e->y();
+        dx_ = pt.x();
+        dy_ = pt.y();
     }
 }
