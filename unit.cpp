@@ -15,6 +15,22 @@ void Unit::setCost(int value){
 	cost_ = value;
 }
 
+std::string Unit::getParentSpec(){
+	return parent_spec_;
+}
+
+void Unit::setParentSpec(std::string specId){
+	parent_spec_ = specId;
+}
+
+std::vector<std::string> Unit::getUpgradeSpecs(){
+	return upgrade_specs_;
+}
+
+void Unit::setUpgradeSpecs(std::vector<std::string> specs){
+	upgrade_specs_ = specs;
+}
+
 double Unit::getExperience() {
 	return experience_;
 }
@@ -191,6 +207,3 @@ int main() {
 	std::cout << "Hello, world!\n";
 }
 
-bool MeleeUnit::canAttackForDistance(int distance) {	
-//	if 
-}

@@ -3,7 +3,7 @@
 #include <vector>
 
 class Spell {
-	//waiting for a realisation
+	//waiting
 };
 class Cell {
 	//waiting for a realisation
@@ -25,6 +25,8 @@ protected:
 private:
 	//personal information
 	int cost_;
+	std::string parent_spec_;
+	std::vector<std::string> upgrade_specs_;
 	double experience_;
 	double level_;
 	std::string race_; //lower case
@@ -61,6 +63,12 @@ public:
 
 	int getCost();
 	void setCost(int value);
+
+	std::string getParentSpec();
+	void setParentSpec(std::string specId);
+
+	std::vector<std::string> getUpgradeSpecs();
+	void setUpgradeSpecs(std::vector <std::string> specs);
 
 	double getExperience();
 	void setExperience(double value);
@@ -130,7 +138,7 @@ public:
 	virtual bool canMoveToCell(Cell* destination);
 
 	virtual void moveToCell(Cell* destination);
-	
+
 	virtual	bool canAttackForDistance(int distance) = 0;
 
 	virtual bool canAttackToCell(Cell* destination) = 0;
