@@ -7,6 +7,14 @@
 
 Unit::Unit() {}
 
+int Unit::getCost(){
+	return cost_;
+}
+
+void Unit::setCost(int value){
+	cost_ = value;
+}
+
 double Unit::getExperience() {
 	return experience_;
 }
@@ -56,11 +64,11 @@ void Unit::setMovementSpeed(int value) {
 	movement_speed_ = value;
 }
 
-int Unit::getAttackSpeed(){
-	return attack_speed_;
+int Unit::getAttackCost(){
+	return attack_cost_;
 }
-void Unit::setAttackSpeed(int value){
-	attack_speed_ = value;
+void Unit::setAttackCost(int value){
+	attack_cost_ = value;
 }
 
 double Unit::getInitiative() {
@@ -99,10 +107,10 @@ void Unit::setAgility(double value) {
 }
 
 int Unit::getAttackPoints(){
-	return attack_speed_;
+	return attack_cost_;
 }
 void Unit::setAttackPoints(int value){
-	attack_speed_ = value;
+	attack_cost_ = value;
 }
 
 double Unit::getMagicDefence() {

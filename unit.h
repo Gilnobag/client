@@ -24,6 +24,7 @@ protected:
 
 private:
 	//personal information
+	int cost_;
 	double experience_;
 	double level_;
 	std::string race_; //lower case
@@ -52,8 +53,14 @@ private:
 	double physic_defence_; //less or equal 40
 
 public:
-	Unit();
+	Unit() = delete;
+	Unit(std::string path) {
+
+	}
 	virtual ~Unit() = delete;
+
+	int getCost();
+	void setCost(int value);
 
 	double getExperience();
 	void setExperience(double value);
@@ -130,35 +137,3 @@ public:
 
 	virtual bool canAttackUnit(Unit* target) = 0;
 };
-
-class MeleeUnit : public Unit {
-protected:
-private:
-
-public:
-	virtual ~MeleeUnit() = delete;
-
-	virtual	bool canAttackForDistance(int distance);
-
-	virtual bool canAttackToCell(Cell* destination);
-
-	virtual bool canAttackUnit(Unit* target);
-
-};
-
-class RangeUnit : public Unit {
-protected:
-private:
-
-public:
-	virtual ~RangeUnit() = delete;
-};
-
-template <class Base>
-class AbstractUnitCreator {
-public:
-	AbstractUnitCreator() {}
-	virtual ~AbstractUnitCreator() {}
-	virtual Base* create() const = 0;
-};
-
