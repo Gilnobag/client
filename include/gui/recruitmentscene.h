@@ -3,6 +3,10 @@
 
 #include <QWidget>
 
+#include <vector>
+
+class UnitIcon;
+
 namespace Ui {
 class RecruitmentScene;
 }
@@ -17,6 +21,8 @@ public:
 
 private:
     Ui::RecruitmentScene *ui;
+    UnitIcon* available_units_icons_[5];
+    UnitIcon* chosen_units_icons_[10];
 };
 
 #endif // RECRUITMENTSCENE_H

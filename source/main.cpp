@@ -1,5 +1,6 @@
-#include "gui.h"
-#include "recruitmentscene.h"
+#include <gui/gui.h>
+#include <gui/recruitmentscene.h>
+
 #include <QApplication>
 
 int main(int argc, char *argv[])
