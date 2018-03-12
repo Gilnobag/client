@@ -53,19 +53,3 @@ protected:
 			delete ConcreteFabric;
 	}
 };
-
-class abstractTest {
-public:
-	int n;
-	abstractTest(std::string s) {
-		n = 0;
-	}
-};
-
-class test : public abstractTest{
-public:
-	test(std::string s) : abstractTest(s) {
-		n = s.length();
-	}
-};
-
