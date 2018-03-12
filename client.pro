@@ -22,19 +22,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+INCLUDEPATH += $$PWD/include/
+
 
 SOURCES += \
-        main.cpp \
-        gui.cpp \
-    recruitmentscene.cpp
+    source/main.cpp \
+    source/gui/uniticon.cpp \
+    source/gui/gui.cpp \
+    source/gui/recruitmentscene.cpp \
+    source/unit.cpp \
+    source/unitfactory.cpp \
+    source/player.cpp
 
 HEADERS += \
-        gui.h \
-    recruitmentscene.h
+    include/gui/uniticon.h \
+    include/gui/gui.h \
+    include/gui/recruitmentscene.h \
+    include/unit.h \
+    include/unitfactory.h \
+    include/player.h
 
 FORMS += \
-        gui.ui \
-    recruitmentscene.ui
+    include/gui/gui.ui \
+    include/gui/recruitmentscene.ui
 
 RESOURCES += \
     gui.qrc

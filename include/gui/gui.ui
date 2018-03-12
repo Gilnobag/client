@@ -142,8 +142,8 @@
      <rect>
       <x>40</x>
       <y>40</y>
-      <width>941</width>
-      <height>721</height>
+      <width>940</width>
+      <height>720</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="content_"/>

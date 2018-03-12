@@ -1,5 +1,21 @@
 <RCC>
     <qresource prefix="/">
+        <file>assets/common/Scroll.png</file>
+        <file>assets/common/strelka.png</file>
+        <file>assets/common/unit_icon_active.png</file>
+        <file>assets/common/unit_icon_default.png</file>
+        <file>assets/common/unit_icon_hover.png</file>
+        <file>assets/recruitscene/divider.png</file>
+        <file>assets/units/norace/nounit/icon.png</file>
+        <file>assets/units/warcraft/blademaster/icon.png</file>
+        <file>assets/units/warcraft/chaosorc/icon.png</file>
+        <file>assets/units/warcraft/nagasummoner/icon.png</file>
+        <file>assets/units/warcraft/necromancer/icon.png</file>
+        <file>assets/units/warcraft/ogremagi/icon.png</file>
+        <file>assets/units/warcraft/rogue/icon.png</file>
+        <file>assets/units/warcraft/wargraider/icon.png</file>
+        <file>assets/units/warcraft/wyvern/icon.png</file>
+        <file>assets/units/warcraft/raceicon.png</file>
         <file>assets/window/thick_opaque-background.png</file>
         <file>assets/window/thick_opaque-border-botleft.png</file>
         <file>assets/window/thick_opaque-border-botright.png</file>
