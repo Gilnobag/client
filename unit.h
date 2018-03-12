@@ -1,14 +1,14 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "AbstractFactory.h"
 
-class Spell {
-	//waiting
-};
+class Spell;	
 class Cell {
 	//waiting for a realisation
 public:
-	bool isEmpty() {
+	//must be in cell.h
+	bool isEmpty() { 
 		return true;
 	}
 	std::vector <Cell*> actualPath(Cell* destination) { //the shortest existing path from (*this) to (*destination)

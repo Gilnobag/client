@@ -4,8 +4,7 @@
 #include <cassert>
 #include <string>
 #include "unit.h"
-
-Unit::Unit() {}
+#include "AbstractFactory.h"
 
 int Unit::getCost(){
 	return cost_;
@@ -202,8 +201,3 @@ void Unit::moveToCell(Cell* destination) {
 		setLocation(destination);
 	}
 }
-
-int main() {
-	std::cout << "Hello, world!\n";
-}
-
