@@ -1,9 +1,20 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "AbstractFactory.h"
 
-class Spell {
-	//empty for allow to compile
+class Spell;	
+class Cell {
+	//waiting for a realisation
+public:
+	//must be in cell.h
+	bool isEmpty() { 
+		return true;
+	}
+	std::vector <Cell*> actualPath(Cell* destination) { //the shortest existing path from (*this) to (*destination)
+		std::vector <Cell*> path;
+		return path;
+	}
 };
 
 class Unit {
@@ -12,26 +23,31 @@ protected:
 	std::vector <Spell> skills_;
 
 private:
-	//personal growth
+	//personal information
+	int cost_;
+	std::string parent_spec_;
+	std::vector<std::string> upgrade_specs_;
 	double experience_;
 	double level_;
+	std::string race_; //lower case
 
-	//connect with events
-	double active_points_;
+	//actions and events
 	double initiative_;
+	int activity_points_;
 
 	//movement
-	std::pair <int, int> location_; //x - first, y - second
-	double movement_speed_;
+	Cell* location_;
+	int movement_speed_;	//how many cells can move for one activity point
+	double real_x_;
+	double real_y_;
 
 	//attack action
 	double agility_;
 	double attack_range_;
 	double damage_per_hit_;
-	double energy_points_;  //for physical attacks
 	double intelligence_;
-	double mana_points_;    //for magic attacks
 	double strength_;
+	int attack_cost_;     //how many activity points does attack cost
 
 	//durability
 	double health_points_;
@@ -39,8 +55,20 @@ private:
 	double physic_defence_; //less or equal 40
 
 public:
-	Unit();
+	Unit() = delete;
+	Unit(std::string path) {
+
+	}
 	virtual ~Unit() = delete;
+
+	int getCost();
+	void setCost(int value);
+
+	std::string getParentSpec();
+	void setParentSpec(std::string specId);
+
+	std::vector<std::string> getUpgradeSpecs();
+	void setUpgradeSpecs(std::vector <std::string> specs);
 
 	double getExperience();
 	void setExperience(double value);
@@ -51,26 +79,23 @@ public:
 	double getHealthPoints();
 	void setHealthPoints(double value);
 
-	double getManaPoints();
-	void setManaPoints(double value);
-
-	double getEnergyPoints();
-	void setEnergyPoints(double value);
-
-	double getActivePoints();
-	void setActivePoints(double value);
-
 	double getAttackRange();
 	void setAttackRange(double value);
 
-	std::pair<int, int> getLocation();
-	void setLocation(double x, double y);
+	int getActivityPoints();
+	void setActivityPoints(int value);
 
-	double getMovementSpeed();
-	void setMovementSpeed(double value);
+	Cell* getLocation();
+	void setLocation(Cell* to);
 
-	double getInitiative_();
-	void setInitiative_(double value);
+	int getMovementSpeed();
+	void setMovementSpeed(int value);
+
+	int getAttackCost();
+	void setAttackCost(int value);
+
+	double getInitiative();
+	void setInitiative(double value);
 
 	double getDamagePerHit();
 	void setDamagePerHit(double value);
@@ -84,13 +109,39 @@ public:
 	double getAgility();
 	void setAgility(double value);
 
+	int getAttackPoints();
+	void setAttackPoints(int value);
+
 	double getMagicDefence();
 	void setMagicDefence(double value);
 
 	double getPhysicDefence();
 	void setPhysicDefence(double value);
 
+	std::string getRace();
+	void setRace(std::string new_race);
+
+	double getRealX();
+	void setRealX(double x);
+
+	double getRealY();
+	void setRealY(double y);
+
 	virtual void calculateDamagePerHit();
 
-	double reduceIncomingDamage(std::string damageType, int value);
+	virtual double reduceIncomingDamage(std::string damageType, int value);
+
+	int lenOfActualPath(Cell* destination);
+
+	virtual bool canMoveForDistance(int distance);
+
+	virtual bool canMoveToCell(Cell* destination);
+
+	virtual void moveToCell(Cell* destination);
+
+	virtual	bool canAttackForDistance(int distance) = 0;
+
+	virtual bool canAttackToCell(Cell* destination) = 0;
+
+	virtual bool canAttackUnit(Unit* target) = 0;
 };
