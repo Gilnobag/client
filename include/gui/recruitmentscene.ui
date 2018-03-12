@@ -137,7 +137,7 @@
      <height>64</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QGridLayout" name="available_units_layout_">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -153,9 +153,6 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="0" column="3">
-     <layout class="QHBoxLayout" name="available_units_layout_"/>
-    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="chosen_units_grid_" native="true">
@@ -167,7 +164,7 @@
      <height>128</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QGridLayout" name="chosen_units_layout_">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -183,13 +180,6 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="0" column="0">
-     <layout class="QGridLayout" name="chosen_units_layout_">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-     </layout>
-    </item>
    </layout>
   </widget>
   <widget class="QPushButton" name="apply_">

@@ -12,7 +12,7 @@ RecruitmentScene::RecruitmentScene(QWidget *parent)
 
     for (int i = 0; i < 5; i++) {
         available_units_icons_[i] = new UnitIcon(ui->available_units_list_);
-        ui->available_units_layout_->addWidget(available_units_icons_[i]);
+        ui->available_units_layout_->addWidget(available_units_icons_[i], 0, i);
         available_units_icons_[i]->setUnitIcon("norace", "nounit");
     }
 
@@ -39,11 +39,11 @@ RecruitmentScene::RecruitmentScene(QWidget *parent)
     ui->next_spec_unit_4_->setUnitIcon("warcraft", "chaosorc");
 
 
-    //available_units_icons_[0]->setUnitIcon("warcraft", "blademaster");
-    //available_units_icons_[1]->setUnitIcon("warcraft", "chaosorc");
-    //available_units_icons_[2]->setUnitIcon("warcraft", "nagasummoner");
-    //available_units_icons_[3]->setUnitIcon("warcraft", "rogue");
-    //available_units_icons_[4]->setUnitIcon("warcraft", "ogremagi");
+    available_units_icons_[0]->setUnitIcon("warcraft", "blademaster");
+    available_units_icons_[1]->setUnitIcon("warcraft", "chaosorc");
+    available_units_icons_[2]->setUnitIcon("warcraft", "nagasummoner");
+    available_units_icons_[3]->setUnitIcon("warcraft", "rogue");
+    available_units_icons_[4]->setUnitIcon("norace", "nounit");
 }
 
 RecruitmentScene::~RecruitmentScene()
