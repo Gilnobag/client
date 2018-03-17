@@ -4,8 +4,31 @@
 #include <cassert>
 #include <string>
 #include "unit.h"
+#include "AbstractFactory.h"
 
-Unit::Unit(){}
+int Unit::getCost(){
+	return cost_;
+}
+
+void Unit::setCost(int value){
+	cost_ = value;
+}
+
+std::string Unit::getParentSpec(){
+	return parent_spec_;
+}
+
+void Unit::setParentSpec(std::string specId){
+	parent_spec_ = specId;
+}
+
+std::vector<std::string> Unit::getUpgradeSpecs(){
+	return upgrade_specs_;
+}
+
+void Unit::setUpgradeSpecs(std::vector<std::string> specs){
+	upgrade_specs_ = specs;
+}
 
 double Unit::getExperience() {
 	return experience_;
@@ -28,27 +51,6 @@ void Unit::setHealthPoints(double value) {
 	health_points_ = value;
 }
 
-double Unit::getManaPoints() {
-	return mana_points_;
-}
-void Unit::setManaPoints(double value) {
-	mana_points_ = value;
-}
-
-double Unit::getEnergyPoints() {
-	return energy_points_;
-}
-void Unit::setEnergyPoints(double value) {
-	energy_points_ = value;
-}
-
-double Unit::getActivePoints() {
-	return active_points_;
-}
-void Unit::setActivePoints(double value) {
-	active_points_ = value;
-}
-
 double Unit::getAttackRange() {
 	return attack_range_;
 }
@@ -56,24 +58,38 @@ void Unit::setAttackRange(double value) {
 	attack_range_ = value;
 }
 
-std::pair<int, int> Unit::getLocation() {
-	return location_;
+int Unit::getActivityPoints(){
+	return activity_points_;
 }
-void Unit::setLocation(double x, double y) {
-	location_ = std::make_pair(x, y);
+void Unit::setActivityPoints(int value){
+	activity_points_ = value;
 }
 
-double Unit::getMovementSpeed() {
+Cell* Unit::getLocation() {
+	return location_;
+}
+void Unit::setLocation(Cell* to) {
+	location_ = to;
+}
+
+int Unit::getMovementSpeed() {
 	return movement_speed_;
 }
-void Unit::setMovementSpeed(double value) {
+void Unit::setMovementSpeed(int value) {
 	movement_speed_ = value;
 }
 
-double Unit::getInitiative_() {
+int Unit::getAttackCost(){
+	return attack_cost_;
+}
+void Unit::setAttackCost(int value){
+	attack_cost_ = value;
+}
+
+double Unit::getInitiative() {
 	return initiative_;
 }
-void Unit::setInitiative_(double value) {
+void Unit::setInitiative(double value) {
 	initiative_ = value;
 }
 
@@ -105,6 +121,13 @@ void Unit::setAgility(double value) {
 	agility_ = value;
 }
 
+int Unit::getAttackPoints(){
+	return attack_cost_;
+}
+void Unit::setAttackPoints(int value){
+	attack_cost_ = value;
+}
+
 double Unit::getMagicDefence() {
 	return magic_defence_;
 }
@@ -117,6 +140,27 @@ double Unit::getPhysicDefence() {
 }
 void Unit::setPhysicDefence(double value) {
 	physic_defence_ = value;
+}
+
+std::string Unit::getRace() {
+	return race_;
+}
+void Unit::setRace(std::string new_race) {
+	race_ = new_race;
+}
+
+double Unit::getRealX() {
+	return real_x_;
+}
+void Unit::setRealX(double x) {
+	real_x_ = x;
+}
+
+double Unit::getRealY() {
+	return real_y_;
+}
+void Unit::setRealY(double y) {
+	real_y_ = y;
 }
 
 void Unit::calculateDamagePerHit() {
@@ -133,5 +177,27 @@ double Unit::reduceIncomingDamage(std::string damageType, int damage) { //return
 	}
 	else if (damageType[0] == 'm' || damageType[0] == 'M') {
 		return (1 - 2.5 * magic_defence_ / 100) * damage;
+	}
+}
+
+int Unit::lenOfActualPath(Cell* destination) {
+	return getLocation()->actualPath(destination).size();
+}
+
+bool Unit::canMoveForDistance(int distance) {
+	return (movement_speed_ >= distance);
+}
+
+bool Unit::canMoveToCell(Cell* destination) {
+	return (destination->isEmpty() && lenOfActualPath(destination) > 0 && canMoveForDistance(lenOfActualPath(destination)));
+}	
+
+void Unit::moveToCell(Cell* destination) {
+	if (!canMoveToCell(destination))
+		return;	//here could be a gui-message about failed move (x-mark, for example)
+	else {
+		int decreasedValue = getMovementSpeed() - lenOfActualPath(destination);
+		setMovementSpeed(decreasedValue);
+		setLocation(destination);
 	}
 }
