@@ -5,15 +5,15 @@
 class Unit;
 
 class Cell {
-
+	int i, j;
 private:
-	Cell * leftUp_;
+	Cell * left_up_;
 	Cell *left_;
-	Cell * leftDown_;
+	Cell * left_down_;
 
-	Cell *rightUp_;
+	Cell *right_up_;
 	Cell *right_;
-	Cell *rightDown_;
+	Cell *right_down_;
 
 	Unit *character_;
 
@@ -23,7 +23,7 @@ private:
 	int distance_;
 	bool AddedToQuery_;
 
-	void clearTable_();
+	void clearTable_(bool);
 	void clearCell_();
 
 	void handleAllMoveableCellsAndUnmoveableCells_(std::queue<Cell*> & Q);
@@ -31,40 +31,43 @@ private:
 
 public:
 
-	explicit Cell(Unit & character);
+	explicit Cell(Unit * character);
 
-	Cell * getleftUp();
-	void setleftUp(Cell *);
+	explicit Cell(int, int);
 
-	Cell * getleft();
-	void setleft(Cell *);
-	
-	Cell * getleftDown();
-	void setleftDown(Cell *);
-	
-	Cell * getrightUp();
-	void setrightUp(Cell *);
-	
-	Cell * getright();
-	void setright(Cell *);
-	
-	Cell * getrightDown();
-	void setrightDown(Cell *);
-	
+	Cell * getLeftUp();
+	void setLeftUp(Cell *);
+
+	Cell * getLeft();
+	void setLeft(Cell *);
+
+	Cell * getLeftDown();
+	void setLeftDown(Cell *);
+
+	Cell * getRightUp();
+	void setRightUp(Cell *);
+
+	Cell * getRight();
+	void setRight(Cell *);
+
+	Cell * getRightDown();
+	void setRightDown(Cell *);
+
 	Unit * getCharacter();
 	void setCharacter(Unit *);
-	
-	bool getisMoveable();
-	void setisMoveable(bool);
-	
-	bool getisAttackable();
-	void setisAttackable(bool);
-	
+
+	bool getIsMoveable();
+	void setIsMoveable(bool);
+
+	bool getIsAttackable();
+	void setIsAttackable(bool);
+
 	int getDistance();
 	void setDistance(int);
-	
+
 	bool isEmpty();
 
-	void RecalculateTableWithCenterThisPoint();
+	void recalculateTableWithCenterThisPoint();
+	void buffTableinDistance(int);
 	std::vector <Cell*> actualPath(Cell*);
 };
