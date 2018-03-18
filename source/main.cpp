@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    GuiSceneManager::getInstance().changeScene("main_menu");
+    GuiSceneManager::getInstance();
+
     return a.exec();
 }

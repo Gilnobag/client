@@ -3,20 +3,20 @@
 #include <string>
 #include <map>
 
-template <class Base, typename IdType>
+template <class Base, typename CreatorParam>
 class AbstractCreator {
 public:
 	virtual ~AbstractCreator() {}
-	virtual Base* create(const IdType &id) const = 0;
+    virtual Base* create(const CreatorParam &id) const = 0;
 };
 
-template <class ObjectClass, class Base, typename IdType>
-class Creator : public AbstractCreator <Base, IdType> {
+template <class ObjectClass, class Base, typename CreatorParam>
+class Creator : public AbstractCreator<Base, CreatorParam> {
 public:
-	Creator(IdType id) {}
+    Creator() {}
 	virtual ~Creator() {}
-	Base* create(const IdType &id) const {
-		return dynamic_cast<Base*>(new ObjectClass(id));
+    Base* create(const CreatorParam &params) const {
+        return dynamic_cast<Base*>(new ObjectClass(params));
 	}
 };
 
@@ -34,14 +34,14 @@ public:
 			delete item.second;
 	}
 
-	template <class C, typename idCreator>
-	void add(const IdType &id) {
-		registerClass(id, new Creator<C, Base, idCreator>(id));
+    template <class C, typename CreatorParam>
+    void addClass(const IdType &id) {
+        registerClass(id, new Creator<C, Base, CreatorParam>());
 	}
 
-	template <typename idCreator>
-	Base* create(const IdType &idClass, const idCreator &id) {
-		return factory_[idClass]->create(id);
+    template <typename CreatorParam>
+    Base* createObject(const IdType &idClass, const CreatorParam &parameters) {
+        return factory_[idClass]->create(parameters);
 	}
 
 protected:

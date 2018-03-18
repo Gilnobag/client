@@ -4,6 +4,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QImage>
 
 #include <iostream>
 #include <vector>
@@ -30,7 +31,7 @@ class Unit : public QObject {
     Q_OBJECT
 
 public:
-    explicit Unit(QString unit_name);
+    explicit Unit(QString parameters);
 
     virtual ~Unit() {}
 
@@ -61,8 +62,8 @@ public:
     int getCost();
     void setCost(int value);
 
-    std::string              getParentSpec();
-    std::vector<std::string> getUpgradeSpecs();
+    std::vector<QString> getParentSpecs();
+    std::vector<QString> getUpgradeSpecs();
 
     //---------------------------------------------//
     //------------Unit location section------------//
@@ -105,13 +106,38 @@ public:
 
     virtual void moveToCell(Cell* destination);
 
+    //---------------------------------------------//
+    //----------------GUI section------------------//
+    //---------------------------------------------//
+
+    QString getUnitName();
+    QString getUnitDescr();
+    QString getUnitBaseClassId();
+    std::vector<QString> getUnitTraits();
+    QImage getUnitIcon();
+
+    //---------------------------------------------//
+    //-----------Parameters load section-----------//
+    //---------------------------------------------//
+
+private:
+    void loadUnitName(QString unit_folder);
+    void loadUnitDescr(QString unit_folder);
+    void loadUnitBaseClass(QString unit_folder);
+    void loadUnitTraits(QString unit_folder);
+    void loadUnitIcon(QString unit_folder);
+    void loadUnitPrevSpecs(QString unit_folder);
+    void loadUnitUpgradeSpecs(QString unit_folder);
+
 protected:
     std::vector <Spell> skills_;
 
     //personal information
     int cost_;
-    std::string parent_spec_;
-    std::vector<std::string> upgrade_specs_;
+
+    std::vector<QString> parent_specs_;
+    std::vector<QString> upgrade_specs_;
+
     double experience_;
     double level_;
     std::string race_; //lower case
@@ -139,4 +165,12 @@ protected:
     double magic_defence_;  //less or equal 40
     double physic_defence_; //less or equal 40
 
+    // GUI values
+    QString race_id_;
+    QString unit_id_;
+
+    QString unit_name_;
+    QString unit_descr_;
+    QString base_class_id_;
+    QImage unit_icon_;
 };

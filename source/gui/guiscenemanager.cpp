@@ -16,12 +16,7 @@ GuiSceneManager::GuiSceneManager(QObject *parent) : QObject(parent) {
     changeScene("main_menu");
 }
 
-GuiSceneManager::~GuiSceneManager() {
-    delete gui_;
-    for (auto scene : scenes_) {
-        delete scene.second;
-    }
-}
+GuiSceneManager::~GuiSceneManager() {}
 
 
 bool GuiSceneManager::registerScene(QString scene_name, QWidget* name) {

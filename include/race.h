@@ -21,6 +21,7 @@ public:
     const std::vector<QString> &getAvailableUnitsList();
 
 private:
+    QString race_name_;
     ObjectFactory<Unit, QString> units_factory_;
     std::vector<QString> available_units_list_;
 

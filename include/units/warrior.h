@@ -9,7 +9,7 @@
 class Warrior : public Unit
 {
 public:
-    explicit Warrior(QString unit_name);
+    explicit Warrior(QString parameters);
 };
 
 #endif // UNITS_WARRIOR_H

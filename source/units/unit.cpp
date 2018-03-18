@@ -1,60 +1,120 @@
+#include "AbstractFactory.h"
+#include "units/unit.h"
+
 #include <iostream>
 #include <algorithm>
 #include <cassert>
 #include <string>
 
-#include "AbstractFactory.h"
-#include "units/unit.h"
+#include <QFile>
+#include <QString>
+#include <QTextStream>
 
-Unit::Unit(QString unit_name) {
+Unit::Unit(QString parameters) {
+    QStringList params = parameters.split("|");
 
+    assert(params.size() >= 2);
+
+    unit_id_ = params[0];
+    race_id_ = params[1];
+
+    QString unit_folder = ":/assets/units/" + race_id_ + "/" + unit_id_ + "/";
+
+    loadUnitName(unit_folder);
+    loadUnitDescr(unit_folder);
+    loadUnitBaseClass(unit_folder);
+    loadUnitTraits(unit_folder);
+    loadUnitIcon(unit_folder);
+    loadUnitPrevSpecs(unit_folder);
+    loadUnitUpgradeSpecs(unit_folder);
+}
+
+void Unit::loadUnitName(QString unit_folder) {
+    QFile file(unit_folder + "unitname.txt");
+    QTextStream in(&file);
+    unit_name_ = in.readLine();
+}
+
+void Unit::loadUnitDescr(QString unit_folder) {
+    QFile file(unit_folder + "descr.txt");
+    QTextStream in(&file);
+    unit_descr_ = in.readAll();
+}
+
+void Unit::loadUnitBaseClass(QString unit_folder) {
+    QFile file(unit_folder + "baseclass.txt");
+    QTextStream in(&file);
+    base_class_id_ = in.readLine();
+}
+
+void Unit::loadUnitTraits(QString unit_folder) {
+   // TO BE DONE!!!
+    health_points_ = rand();
+    activity_points_ = rand();
+    attack_cost_ = rand();
+    attack_range_ = rand();
+}
+
+void Unit::loadUnitIcon(QString unit_folder) {
+    unit_icon_.load(unit_folder + "icon.png");
+}
+
+void Unit::loadUnitPrevSpecs(QString unit_folder) {
+    QFile file(unit_folder + "prevgrades.txt");
+    QTextStream in(&file);
+    QString line = in.readLine();
+    while (in.atEnd()) {
+        parent_specs_.push_back(line);
+        line = in.readLine();
+    }
+}
+
+void Unit::loadUnitUpgradeSpecs(QString unit_folder) {
+    QFile file(unit_folder + "nextgrades.txt");
+    QTextStream in(&file);
+    QString line = in.readLine();
+    while (in.atEnd()) {
+        upgrade_specs_.push_back(line);
+        line = in.readLine();
+    }
 }
 
 int Unit::getCost(){
 	return cost_;
 }
 
-
-std::string Unit::getParentSpec(){
-	return parent_spec_;
+std::vector<QString> Unit::getParentSpecs(){
+    return parent_specs_;
 }
 
-
-
-std::vector<std::string> Unit::getUpgradeSpecs(){
+std::vector<QString> Unit::getUpgradeSpecs(){
 	return upgrade_specs_;
 }
-
-
 
 double Unit::getExperience() {
 	return experience_;
 }
 
-
 double Unit::getLevel() {
 	return level_;
 }
-
 
 double Unit::getHealthPoints() {
 	return health_points_;
 }
 
-
 double Unit::getAttackRange() {
 	return attack_range_;
 }
-
 
 int Unit::getActivityPoints(){
 	return activity_points_;
 }
 
-
 Cell* Unit::getLocation() {
 	return location_;
 }
+
 void Unit::setLocation(Cell* to) {
 	location_ = to;
 }
@@ -63,55 +123,46 @@ int Unit::getMovementSpeed() {
 	return movement_speed_;
 }
 
-
 int Unit::getAttackCost(){
 	return attack_cost_;
 }
-
 
 double Unit::getInitiative() {
 	return initiative_;
 }
 
-
 double Unit::getDamagePerHit() {
 	return damage_per_hit_;
 }
-
 
 double Unit::getIntelligence() {
 	return intelligence_;
 }
 
-
 double Unit::getStrength() {
 	return strength_;
 }
-
 
 double Unit::getAgility() {
 	return agility_;
 }
 
-
 int Unit::getAttackPoints(){
 	return attack_cost_;
 }
-
 
 double Unit::getMagicDefence() {
 	return magic_defence_;
 }
 
-
 double Unit::getPhysicDefence() {
 	return physic_defence_;
 }
 
-
 double Unit::getRealX() {
 	return real_x_;
 }
+
 void Unit::setRealX(double x) {
 	real_x_ = x;
 }
@@ -119,6 +170,7 @@ void Unit::setRealX(double x) {
 double Unit::getRealY() {
 	return real_y_;
 }
+
 void Unit::setRealY(double y) {
 	real_y_ = y;
 }
@@ -159,4 +211,29 @@ void Unit::moveToCell(Cell* destination) {
         movement_speed_ -= lenOfActualPath(destination);
 		setLocation(destination);
 	}
+}
+
+QString Unit::getUnitName() {
+    return unit_name_;
+}
+
+QString Unit::getUnitDescr() {
+    return unit_descr_;
+}
+
+QString Unit::getUnitBaseClassId() {
+    return base_class_id_;
+}
+
+std::vector<QString> Unit::getUnitTraits() {
+    return {
+            QString::number(health_points_),
+            QString::number(attack_range_),
+            QString::number(activity_points_),
+            QString::number(initiative_)
+    };
+}
+
+QImage Unit::getUnitIcon() {
+    return unit_icon_;
 }

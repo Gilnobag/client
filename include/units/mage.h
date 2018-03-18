@@ -8,7 +8,7 @@
 class Mage : public Unit
 {
 public:
-    explicit Mage(QString unit_name);
+    explicit Mage(QString parameters);
 };
 
 #endif // UNITS_MAGE_H
