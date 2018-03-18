@@ -1,0 +1,5 @@
+undead-mage
+undead-warrior
+undead-rider
+undead-rogue
+undead-archer
