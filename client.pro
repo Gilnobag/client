@@ -31,20 +31,29 @@ SOURCES += \
     source/gui/gui.cpp \
     source/gui/recruitmentscene.cpp \
     source/unit.cpp \
-    source/unitfactory.cpp \
-    source/player.cpp
+    source/player.cpp \
+    source/gui/mainmenu.cpp \
+    source/gui/guiscenemanager.cpp \
+    source/gui/detatchedwidget.cpp \
+    source/gui/playervsplayerintro.cpp
 
 HEADERS += \
     include/gui/uniticon.h \
     include/gui/gui.h \
     include/gui/recruitmentscene.h \
     include/unit.h \
-    include/unitfactory.h \
-    include/player.h
+    include/abstractfactory.h \
+    include/player.h \
+    include/gui/mainmenu.h \
+    include/gui/guiscenemanager.h \
+    include/gui/detatchedwidget.h \
+    include/gui/playervsplayerintro.h
 
 FORMS += \
     include/gui/gui.ui \
-    include/gui/recruitmentscene.ui
+    include/gui/recruitmentscene.ui \
+    include/gui/mainmenu.ui \
+    include/gui/playervsplayerintro.ui
 
 RESOURCES += \
     gui.qrc

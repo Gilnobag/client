@@ -182,7 +182,7 @@
     </property>
    </layout>
   </widget>
-  <widget class="QPushButton" name="apply_">
+  <widget class="QPushButton" name="apply">
    <property name="geometry">
     <rect>
      <x>610</x>
@@ -244,17 +244,17 @@
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="back_button_">
+  <widget class="QPushButton" name="back_button">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>640</y>
+     <x>50</x>
+     <y>650</y>
      <width>161</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Вернуться на главную</string>
+    <string>На главное меню</string>
    </property>
   </widget>
   <widget class="QLabel" name="available_money_text_">
@@ -416,6 +416,19 @@
     </rect>
    </property>
   </widget>
+  <widget class="QLabel" name="title_1">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>350</y>
+     <width>941</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; color:#b12d2d;&quot;&gt;Набор юнитов&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
   <zorder>divider_</zorder>
   <zorder>chosen_race_text_</zorder>
   <zorder>chosen_race_image_</zorder>
@@ -426,12 +439,13 @@
   <zorder>available_units_list_</zorder>
   <zorder>chosen_units_grid_</zorder>
   <zorder>description_scroll_widget_</zorder>
-  <zorder>back_button_</zorder>
+  <zorder>back_button</zorder>
   <zorder>available_units_text_</zorder>
   <zorder>available_money_text_</zorder>
-  <zorder>apply_</zorder>
+  <zorder>apply</zorder>
   <zorder>unit_spec_widget_</zorder>
   <zorder>widget</zorder>
+  <zorder>title_1</zorder>
  </widget>
  <customwidgets>
   <customwidget>

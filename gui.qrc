@@ -25,5 +25,6 @@
         <file>assets/window/thick_opaque-border-top.png</file>
         <file>assets/window/thick_opaque-border-topleft.png</file>
         <file>assets/window/thick_opaque-border-topright.png</file>
+        <file>assets/pvp_intro/picture.jpg</file>
     </qresource>
 </RCC>

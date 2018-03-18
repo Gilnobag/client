@@ -19,6 +19,9 @@ public:
     explicit RecruitmentScene(QWidget *parent = 0);
     ~RecruitmentScene();
 
+private slots:
+    void on_back_button_clicked();
+
 private:
     Ui::RecruitmentScene *ui;
     UnitIcon* available_units_icons_[5];

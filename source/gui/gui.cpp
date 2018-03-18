@@ -9,14 +9,19 @@ GUI::GUI(QWidget *parent) :
 {
     ui_->setupUi(this);
 
-    rq_scene_ = new RecruitmentScene(ui_->main_content_);   /// Инициализируем графическую сцену выбора юнитов
-    rq_scene_->show();
+    //rq_scene_ = new RecruitmentScene(ui_->main_content_);   /// Инициализируем графическую сцену выбора юнитов
+    //rq_scene_->show();
 }
 
 GUI::~GUI()
 {
     delete ui_;
 }
+
+QWidget* GUI::mainContentScene() {
+    return ui_->main_content_;
+}
+
 
 void GUI::mouseMoveEvent( QMouseEvent* e ) {
     if( e->buttons() | Qt::LeftButton ) {

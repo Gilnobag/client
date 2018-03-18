@@ -1,5 +1,6 @@
 #include <gui/recruitmentscene.h>
 #include <gui/uniticon.h>
+#include <gui/guiscenemanager.h>
 
 #include <ui_recruitmentscene.h>
 #include <QHBoxLayout>
@@ -49,4 +50,9 @@ RecruitmentScene::RecruitmentScene(QWidget *parent)
 RecruitmentScene::~RecruitmentScene()
 {
     delete ui;
+}
+
+void RecruitmentScene::on_back_button_clicked()
+{
+    GuiSceneManager::getInstance().changeScene("main_menu");
 }

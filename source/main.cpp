@@ -1,3 +1,4 @@
+#include <gui/guiscenemanager.h>
 #include <gui/gui.h>
 #include <gui/recruitmentscene.h>
 
@@ -6,7 +7,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    GUI w;
-    w.show();
+
+    GuiSceneManager::getInstance().changeScene("main_menu");
     return a.exec();
 }

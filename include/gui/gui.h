@@ -17,9 +17,11 @@ class GUI : public QMainWindow
 public:
     explicit GUI(QWidget *parent = 0);
     ~GUI();
+    QWidget* mainContentScene();
 
 private:
     Ui::GUI *ui_;
+
     QGraphicsScene *scene_;
     RecruitmentScene *rq_scene_;
 

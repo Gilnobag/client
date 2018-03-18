@@ -3,7 +3,11 @@
 #include <vector>
 #include "AbstractFactory.h"
 
-class Spell;	
+class Spell {
+public:
+    int a;
+};
+
 class Cell {
 	//waiting for a realisation
 public:
