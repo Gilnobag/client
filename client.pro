@@ -35,7 +35,9 @@ SOURCES += \
     source/gui/mainmenu.cpp \
     source/gui/guiscenemanager.cpp \
     source/gui/detatchedwidget.cpp \
-    source/gui/playervsplayerintro.cpp
+    source/gui/playervsplayerintro.cpp \
+    source/race.cpp \
+    source/racemanager.cpp
 
 HEADERS += \
     include/gui/uniticon.h \
@@ -47,7 +49,9 @@ HEADERS += \
     include/gui/mainmenu.h \
     include/gui/guiscenemanager.h \
     include/gui/detatchedwidget.h \
-    include/gui/playervsplayerintro.h
+    include/gui/playervsplayerintro.h \
+    include/race.h \
+    include/racemanager.h
 
 FORMS += \
     include/gui/gui.ui \
