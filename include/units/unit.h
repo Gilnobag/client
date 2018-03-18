@@ -110,11 +110,11 @@ public:
     //----------------GUI section------------------//
     //---------------------------------------------//
 
-    QString getUnitName();
-    QString getUnitDescr();
-    QString getUnitBaseClassId();
-    std::vector<QString> getUnitTraits();
-    QImage getUnitIcon();
+    QString getUnitName() const;
+    QString getUnitDescr() const;
+    QString getUnitBaseClassId() const;
+    std::vector<QString> getUnitTraits() const;
+    QImage getUnitIcon() const;
 
     //---------------------------------------------//
     //-----------Parameters load section-----------//

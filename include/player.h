@@ -2,6 +2,7 @@
 #define INCLUDEPLAYER_H
 
 #include "units/unit.h"
+#include "racemanager.h"
 
 #include <QObject>
 
@@ -12,23 +13,30 @@ class Race;
 template<class Obj, class Identifier>
 class ObjectFactory;
 
-template<int id>
 class Player {
-private:
+public:
     Player() {
 
     }
 
-public:
-    static Player& getInstance() {
-        static Player<id> instance;
-        return instance;
+    void init(int id) {
+        player_name_ = "Игрок " + QString::number(id);
+        race_ = RaceManager::getInstance().getRace(
+                    RaceManager::getInstance().getAvailableRacesList()[0]
+                );
+        units_.clear();
     }
 
-    void init() {
-        player_name_ = "Игрок " + QString::number(id);
-        race_ = nullptr;
-        units_.clear();
+    QString getPlayerName() {
+        return player_name_;
+    }
+
+    const std::set<Unit>& getUnits() {
+        return units_;
+    }
+
+    Race* getRace() {
+        return race_;
     }
 
 signals:

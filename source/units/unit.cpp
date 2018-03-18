@@ -213,19 +213,19 @@ void Unit::moveToCell(Cell* destination) {
 	}
 }
 
-QString Unit::getUnitName() {
+QString Unit::getUnitName() const {
     return unit_name_;
 }
 
-QString Unit::getUnitDescr() {
+QString Unit::getUnitDescr() const {
     return unit_descr_;
 }
 
-QString Unit::getUnitBaseClassId() {
+QString Unit::getUnitBaseClassId() const {
     return base_class_id_;
 }
 
-std::vector<QString> Unit::getUnitTraits() {
+std::vector<QString> Unit::getUnitTraits() const {
     return {
             QString::number(health_points_),
             QString::number(attack_range_),
@@ -234,6 +234,6 @@ std::vector<QString> Unit::getUnitTraits() {
     };
 }
 
-QImage Unit::getUnitIcon() {
+QImage Unit::getUnitIcon() const {
     return unit_icon_;
 }

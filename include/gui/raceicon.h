@@ -1,5 +1,5 @@
-#ifndef UNITICON_H
-#define UNITICON_H
+#ifndef RACEICON_H
+#define RACEICON_H
 
 #include "units/unit.h"
 
@@ -11,17 +11,17 @@
 #include <QPainter>
 #include <QTime>
 
-class UnitIcon : public QLabel {
+class RaceIcon : public QLabel {
 Q_OBJECT
 
 public:
-    explicit UnitIcon(QWidget* parent = 0, int width = 64, int height = 64);
-    ~UnitIcon();
+    explicit RaceIcon(QWidget* parent = 0, int width = 64, int height = 64);
+    ~RaceIcon();
 
-    void setUnitIcon(QString racename, QString unitname);
-    void setUnitIcon(QImage icon);
+    void setRaceIcon(QString racename);
+    void setRaceIcon(QImage icon);
     void resize(int w, int h);
-    void unsetUnitIcon();
+    void unsetRaceIcon();
 
     void deactivate();
     void activate();
@@ -61,6 +61,4 @@ private:
     Unit* unit_;
 };
 
-
-
-#endif // UNITICON_H
+#endif // RACEICON_H

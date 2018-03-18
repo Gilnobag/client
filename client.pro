@@ -31,7 +31,6 @@ SOURCES += \
     source/gui/gui.cpp \
     source/gui/recruitmentscene.cpp \
     source/units/unit.cpp \
-    source/player.cpp \
     source/gui/mainmenu.cpp \
     source/gui/guiscenemanager.cpp \
     source/gui/detatchedwidget.cpp \
@@ -40,7 +39,9 @@ SOURCES += \
     source/racemanager.cpp \
     source/units/mage.cpp \
     source/units/warrior.cpp \
-    source/gui/scene.cpp
+    source/gui/scene.cpp \
+    source/gui/raceicon.cpp \
+    source/playermanager.cpp
 
 HEADERS += \
     include/gui/uniticon.h \
@@ -57,7 +58,9 @@ HEADERS += \
     include/racemanager.h \
     include/units/mage.h \
     include/units/warrior.h \
-    include/gui/scene.h
+    include/gui/scene.h \
+    include/gui/raceicon.h \
+    include/playermanager.h
 
 FORMS += \
     include/gui/gui.ui \

@@ -1,8 +1,8 @@
-#include <gui/uniticon.h>
+#include <gui/raceicon.h>.h>
 #include <QDebug>
 #include <QTime>
 
-UnitIcon::UnitIcon(QWidget* parent, int width, int height)
+RaceIcon::RaceIcon(QWidget* parent, int width, int height)
     : QLabel(parent)
 {
     state_ = 0;
@@ -19,11 +19,10 @@ UnitIcon::UnitIcon(QWidget* parent, int width, int height)
     drawIcon();
 }
 
-UnitIcon::~UnitIcon()
-{
-}
+RaceIcon::~RaceIcon()
+{}
 
-void UnitIcon::drawIcon() {
+void RaceIcon::drawIcon() {
     QPixmap combined(width_, height_);
     QPainter p(&combined);
 
@@ -48,43 +47,44 @@ void UnitIcon::drawIcon() {
     setPixmap(combined);
 }
 
-void UnitIcon::setUnitIcon(QString racename, QString unitname) {
-    icon_.load(":/assets/units/" + racename + "/" + unitname + "/icon.png");
+void RaceIcon::setRaceIcon(QString racename) {
+    icon_.load(":/assets/units/" + racename + "/icon.png");
     if (state_ == 0)
         state_ = 1;
     drawIcon();
 }
 
-void UnitIcon::setUnitIcon(QImage icon) {
+void RaceIcon::setRaceIcon(QImage icon) {
     icon_ = icon;
     if (state_ == 0)
         state_ = 1;
     drawIcon();
 }
 
-void UnitIcon::unsetUnitIcon() {
+
+void RaceIcon::unsetRaceIcon() {
     state_ = 0;
     drawIcon();
 }
 
-void UnitIcon::resize(int w, int h) {
+void RaceIcon::resize(int w, int h) {
     width_ = w;
     height_ = h;
     drawIcon();
 }
 
-void UnitIcon::deactivate() {
+void RaceIcon::deactivate() {
     if (state_ > 1)
         state_ = 1;
     drawIcon();
 }
 
-void UnitIcon::activate() {
+void RaceIcon::activate() {
     state_ = 3;
     drawIcon();
 }
 
-void UnitIcon::mousePressEvent(QMouseEvent*)
+void RaceIcon::mousePressEvent(QMouseEvent*)
 {
     if (state_ == 0)
         return;
@@ -101,7 +101,7 @@ void UnitIcon::mousePressEvent(QMouseEvent*)
     }
 }
 
-void UnitIcon::enterEvent(QEvent*)
+void RaceIcon::enterEvent(QEvent*)
 {
     if (state_ == 0 || state_ == 3)
         return;
@@ -111,7 +111,7 @@ void UnitIcon::enterEvent(QEvent*)
     emit hovered();
 }
 
-void UnitIcon::leaveEvent(QEvent*)
+void RaceIcon::leaveEvent(QEvent*)
 {
     if (state_ == 0 || state_ == 3)
         return;
