@@ -12,7 +12,7 @@ public:
 		return true;
 	}
 	std::vector <Cell*> actualPath(Cell* destination) { //the shortest existing path from (*this) to (*destination)
-		std::vector <Cell*> path;
+		std::vector <Cell*> path;  //empty if there is no way
 		return path;
 	}
 };
@@ -22,7 +22,6 @@ class Unit {
 protected:
 	std::vector <Spell> skills_;
 
-private:
 	//personal information
 	int cost_;
 	std::string parent_spec_;
@@ -30,10 +29,12 @@ private:
 	double experience_;
 	double level_;
 	std::string race_; //lower case
+	int max_copies_in_army_; 
 
 	//actions and events
 	double initiative_;
 	int activity_points_;
+	int starting_activity_points_; //at start turn
 
 	//movement
 	Cell* location_;
@@ -55,11 +56,9 @@ private:
 	double physic_defence_; //less or equal 40
 
 public:
-	Unit() = delete;
-	Unit(std::string path) {
-
-	}
-	virtual ~Unit() = delete;
+	Unit() {};
+	Unit(std::string id);
+	virtual ~Unit() {};
 
 	int getCost();
 	void setCost(int value);
@@ -84,6 +83,9 @@ public:
 
 	int getActivityPoints();
 	void setActivityPoints(int value);
+
+	int getStartingActivityPoints();
+	void setStartingActivityPoints(int value);
 
 	Cell* getLocation();
 	void setLocation(Cell* to);
@@ -118,6 +120,9 @@ public:
 	double getPhysicDefence();
 	void setPhysicDefence(double value);
 
+	int getMaxCopiesInArmy();
+	void setMaxCopiesInArmy(int count);
+
 	std::string getRace();
 	void setRace(std::string new_race);
 
@@ -129,7 +134,7 @@ public:
 
 	virtual void calculateDamagePerHit();
 
-	virtual double reduceIncomingDamage(std::string damageType, int value);
+	virtual double reduceIncomingDamage(std::string damageType, int damage);
 
 	int lenOfActualPath(Cell* destination);
 
