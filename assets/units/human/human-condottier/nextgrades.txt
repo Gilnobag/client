@@ -1,0 +1,3 @@
+human-spearman
+human-chastener
+human-duelist

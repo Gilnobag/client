@@ -1,0 +1,5 @@
+human-mage
+human-warrior
+human-rider
+human-rogue
+human-archer

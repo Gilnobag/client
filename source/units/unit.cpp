@@ -111,6 +111,13 @@ int Unit::getActivityPoints(){
 	return activity_points_;
 }
 
+int Unit::getStartingActivityPoints() {
+	return starting_activity_points_;
+}
+void Unit::setStartingActivityPoints(int value) {
+	starting_activity_points_ = value;
+}
+
 Cell* Unit::getLocation() {
 	return location_;
 }
@@ -197,7 +204,7 @@ int Unit::lenOfActualPath(Cell* destination) {
 }
 
 bool Unit::canMoveForDistance(int distance) {
-	return (movement_speed_ >= distance);
+	return (activity_points_ * movement_speed_ >= distance);
 }
 
 bool Unit::canMoveToCell(Cell* destination) {
