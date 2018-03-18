@@ -14,14 +14,16 @@ class Race : public QObject
 {
     Q_OBJECT
 public:
-    explicit Race(QObject *parent = nullptr);
+    explicit Race(QString race_name, QObject *parent = nullptr);
 
-    Unit* createUnit(QString race_name);
+    Unit* createUnit(QString unit_name);
 
-    std::vector<QString> getAvailableUnitsList();
+    const std::vector<QString> &getAvailableUnitsList();
 
 private:
     ObjectFactory<Unit, QString> units_factory_;
+    std::vector<QString> available_units_list_;
+
 signals:
 
 public slots:

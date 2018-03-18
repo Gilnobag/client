@@ -19,7 +19,12 @@ public:
     }
 
     Race* getRace(QString race_name);
-    std::vector<QString> getAvailableRacesList();
+    const std::vector<QString>& getAvailableRacesList();
+
+private:
+    std::vector<QString> available_races_;
+    std::map<QString, Race*> races_;
+
 signals:
 
 public slots:

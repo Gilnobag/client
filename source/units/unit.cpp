@@ -2,67 +2,55 @@
 #include <algorithm>
 #include <cassert>
 #include <string>
-#include "unit.h"
+
 #include "AbstractFactory.h"
+#include "units/unit.h"
+
+Unit::Unit(QString unit_name) {
+
+}
 
 int Unit::getCost(){
 	return cost_;
 }
 
-void Unit::setCost(int value){
-	cost_ = value;
-}
 
 std::string Unit::getParentSpec(){
 	return parent_spec_;
 }
 
-void Unit::setParentSpec(std::string specId){
-	parent_spec_ = specId;
-}
+
 
 std::vector<std::string> Unit::getUpgradeSpecs(){
 	return upgrade_specs_;
 }
 
-void Unit::setUpgradeSpecs(std::vector<std::string> specs){
-	upgrade_specs_ = specs;
-}
+
 
 double Unit::getExperience() {
 	return experience_;
 }
-void Unit::setExperience(double value) {
-	experience_ = value;
-}
+
 
 double Unit::getLevel() {
 	return level_;
-};
-void Unit::setLevel(double value) {
-	level_ = value;
 }
+
 
 double Unit::getHealthPoints() {
 	return health_points_;
-};
-void Unit::setHealthPoints(double value) {
-	health_points_ = value;
 }
+
 
 double Unit::getAttackRange() {
 	return attack_range_;
 }
-void Unit::setAttackRange(double value) {
-	attack_range_ = value;
-}
+
 
 int Unit::getActivityPoints(){
 	return activity_points_;
 }
-void Unit::setActivityPoints(int value){
-	activity_points_ = value;
-}
+
 
 Cell* Unit::getLocation() {
 	return location_;
@@ -74,79 +62,52 @@ void Unit::setLocation(Cell* to) {
 int Unit::getMovementSpeed() {
 	return movement_speed_;
 }
-void Unit::setMovementSpeed(int value) {
-	movement_speed_ = value;
-}
+
 
 int Unit::getAttackCost(){
 	return attack_cost_;
 }
-void Unit::setAttackCost(int value){
-	attack_cost_ = value;
-}
+
 
 double Unit::getInitiative() {
 	return initiative_;
 }
-void Unit::setInitiative(double value) {
-	initiative_ = value;
-}
+
 
 double Unit::getDamagePerHit() {
 	return damage_per_hit_;
 }
-void Unit::setDamagePerHit(double value) {
-	damage_per_hit_ = value;
-}
+
 
 double Unit::getIntelligence() {
 	return intelligence_;
 }
-void Unit::setIntelligence(double value) {
-	intelligence_ = value;
-}
+
 
 double Unit::getStrength() {
 	return strength_;
 }
-void Unit::setStrength(double value) {
-	strength_ = value;
-}
+
 
 double Unit::getAgility() {
 	return agility_;
 }
-void Unit::setAgility(double value) {
-	agility_ = value;
-}
+
 
 int Unit::getAttackPoints(){
 	return attack_cost_;
 }
-void Unit::setAttackPoints(int value){
-	attack_cost_ = value;
-}
+
 
 double Unit::getMagicDefence() {
 	return magic_defence_;
 }
-void Unit::setMagicDefence(double value) {
-	magic_defence_ = value;
-}
+
 
 double Unit::getPhysicDefence() {
 	return physic_defence_;
 }
-void Unit::setPhysicDefence(double value) {
-	physic_defence_ = value;
-}
 
-std::string Unit::getRace() {
-	return race_;
-}
-void Unit::setRace(std::string new_race) {
-	race_ = new_race;
-}
 
 double Unit::getRealX() {
 	return real_x_;
@@ -195,8 +156,7 @@ void Unit::moveToCell(Cell* destination) {
 	if (!canMoveToCell(destination))
 		return;	//here could be a gui-message about failed move (x-mark, for example)
 	else {
-		int decreasedValue = getMovementSpeed() - lenOfActualPath(destination);
-		setMovementSpeed(decreasedValue);
+        movement_speed_ -= lenOfActualPath(destination);
 		setLocation(destination);
 	}
 }
