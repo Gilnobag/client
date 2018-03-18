@@ -39,7 +39,8 @@ SOURCES += \
     source/race.cpp \
     source/racemanager.cpp \
     source/units/mage.cpp \
-    source/units/warrior.cpp
+    source/units/warrior.cpp \
+    source/gui/scene.cpp
 
 HEADERS += \
     include/gui/uniticon.h \
@@ -55,7 +56,8 @@ HEADERS += \
     include/race.h \
     include/racemanager.h \
     include/units/mage.h \
-    include/units/warrior.h
+    include/units/warrior.h \
+    include/gui/scene.h
 
 FORMS += \
     include/gui/gui.ui \

@@ -1,12 +1,13 @@
 #include <gui/recruitmentscene.h>
 #include <gui/uniticon.h>
 #include <gui/guiscenemanager.h>
+#include <gui/scene.h>
 
 #include <ui_recruitmentscene.h>
 #include <QHBoxLayout>
 
 RecruitmentScene::RecruitmentScene(QWidget *parent)
-    : QWidget(parent)
+    : Scene(parent)
     , ui(new Ui::RecruitmentScene)
 {
     ui->setupUi(this);
@@ -46,6 +47,8 @@ RecruitmentScene::RecruitmentScene(QWidget *parent)
     available_units_icons_[3]->setUnitIcon("warcraft", "rogue");
     available_units_icons_[4]->setUnitIcon("norace", "nounit");
 }
+
+
 
 RecruitmentScene::~RecruitmentScene()
 {

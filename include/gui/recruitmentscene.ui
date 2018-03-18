@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>RecruitmentScene</class>
- <widget class="QWidget" name="RecruitmentScene">
+ <widget class="Scene" name="RecruitmentScene">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -448,6 +448,12 @@
   <zorder>title_1</zorder>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>Scene</class>
+   <extends>QWidget</extends>
+   <header location="global">gui/scene.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>UnitIcon</class>
    <extends>QLabel</extends>

@@ -1,6 +1,8 @@
 #ifndef UNITICON_H
 #define UNITICON_H
 
+#include "units/unit.h"
+
 #include <QObject>
 #include <QWidget>
 #include <QLabel>
@@ -8,8 +10,6 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QTime>
-
-#include <unit.h>
 
 class UnitIcon : public QLabel {
 Q_OBJECT

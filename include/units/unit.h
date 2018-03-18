@@ -129,6 +129,13 @@ private:
     void loadUnitPrevSpecs(QString unit_folder);
     void loadUnitUpgradeSpecs(QString unit_folder);
 
+public:
+    bool operator <(const Unit &b) {
+        if (base_class_id_ != b.base_class_id_)
+            return base_class_id_ < b.base_class_id_;
+        return unit_id_ < b.unit_id_;
+    }
+
 protected:
     std::vector <Spell> skills_;
 
