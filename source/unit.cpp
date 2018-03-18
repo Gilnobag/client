@@ -6,6 +6,9 @@
 #include "unit.h"
 #include "AbstractFactory.h"
 
+Unit::Unit(std::string id){
+}
+
 int Unit::getCost(){
 	return cost_;
 }
@@ -63,6 +66,13 @@ int Unit::getActivityPoints(){
 }
 void Unit::setActivityPoints(int value){
 	activity_points_ = value;
+}
+
+int Unit::getStartingActivityPoints() {
+	return starting_activity_points_;
+}
+void Unit::setStartingActivityPoints(int value) {
+	starting_activity_points_ = value;
 }
 
 Cell* Unit::getLocation() {
@@ -142,6 +152,14 @@ void Unit::setPhysicDefence(double value) {
 	physic_defence_ = value;
 }
 
+int Unit::getMaxCopiesInArmy(){
+	return max_copies_in_army_;
+}
+
+void Unit::setMaxCopiesInArmy(int count){
+	max_copies_in_army_ = count;
+}
+
 std::string Unit::getRace() {
 	return race_;
 }
@@ -185,7 +203,7 @@ int Unit::lenOfActualPath(Cell* destination) {
 }
 
 bool Unit::canMoveForDistance(int distance) {
-	return (movement_speed_ >= distance);
+	return (activity_points_ * movement_speed_ >= distance);
 }
 
 bool Unit::canMoveToCell(Cell* destination) {
@@ -196,8 +214,8 @@ void Unit::moveToCell(Cell* destination) {
 	if (!canMoveToCell(destination))
 		return;	//here could be a gui-message about failed move (x-mark, for example)
 	else {
-		int decreasedValue = getMovementSpeed() - lenOfActualPath(destination);
-		setMovementSpeed(decreasedValue);
+		int decreasedPoints = getActivityPoints() * getMovementSpeed() - lenOfActualPath(destination);
+		setActivityPoints(decreasedPoints);
 		setLocation(destination);
 	}
 }
