@@ -1,0 +1,3 @@
+human-attack-mage
+human-healer
+human-support-mage
