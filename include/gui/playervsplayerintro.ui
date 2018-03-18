@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>PlayerVsPlayerIntro</class>
- <widget class="QWidget" name="PlayerVsPlayerIntro">
+ <widget class="Scene" name="PlayerVsPlayerIntro">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -107,7 +107,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#b12d2d;&quot;&gt;Кол-во монет:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="money_">
    <property name="geometry">
     <rect>
      <x>462</x>
@@ -121,6 +121,14 @@
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Scene</class>
+   <extends>QWidget</extends>
+   <header location="global">gui/scene.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -30,24 +30,37 @@ SOURCES += \
     source/gui/uniticon.cpp \
     source/gui/gui.cpp \
     source/gui/recruitmentscene.cpp \
-    source/unit.cpp \
-    source/player.cpp \
+    source/units/unit.cpp \
     source/gui/mainmenu.cpp \
     source/gui/guiscenemanager.cpp \
     source/gui/detatchedwidget.cpp \
-    source/gui/playervsplayerintro.cpp
+    source/gui/playervsplayerintro.cpp \
+    source/race.cpp \
+    source/racemanager.cpp \
+    source/units/mage.cpp \
+    source/units/warrior.cpp \
+    source/gui/scene.cpp \
+    source/gui/raceicon.cpp \
+    source/playermanager.cpp
 
 HEADERS += \
     include/gui/uniticon.h \
     include/gui/gui.h \
     include/gui/recruitmentscene.h \
-    include/unit.h \
+    include/units/unit.h \
     include/abstractfactory.h \
     include/player.h \
     include/gui/mainmenu.h \
     include/gui/guiscenemanager.h \
     include/gui/detatchedwidget.h \
-    include/gui/playervsplayerintro.h
+    include/gui/playervsplayerintro.h \
+    include/race.h \
+    include/racemanager.h \
+    include/units/mage.h \
+    include/units/warrior.h \
+    include/gui/scene.h \
+    include/gui/raceicon.h \
+    include/playermanager.h
 
 FORMS += \
     include/gui/gui.ui \

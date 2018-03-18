@@ -1,19 +1,23 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 
+#include "gui/scene.h"
+
 #include <QWidget>
 
 namespace Ui {
 class MainMenu;
 }
 
-class MainMenu : public QWidget
+class MainMenu : public Scene
 {
     Q_OBJECT
 
 public:
     explicit MainMenu(QWidget *parent = 0);
     ~MainMenu();
+
+    void ParseArgs(QString args) {}
 
 private slots:
 

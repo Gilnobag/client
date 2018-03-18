@@ -1,72 +1,120 @@
+#include "AbstractFactory.h"
+#include "units/unit.h"
+
 #include <iostream>
 #include <algorithm>
 #include <cassert>
 #include <string>
-#include "unit.h"
-#include "AbstractFactory.h"
+
+#include <QFile>
+#include <QString>
+#include <QTextStream>
+
+Unit::Unit(QString parameters) {
+    QStringList params = parameters.split("|");
+
+    assert(params.size() >= 2);
+
+    unit_id_ = params[0];
+    race_id_ = params[1];
+
+    QString unit_folder = ":/assets/units/" + race_id_ + "/" + unit_id_ + "/";
+
+    loadUnitName(unit_folder);
+    loadUnitDescr(unit_folder);
+    loadUnitBaseClass(unit_folder);
+    loadUnitTraits(unit_folder);
+    loadUnitIcon(unit_folder);
+    loadUnitPrevSpecs(unit_folder);
+    loadUnitUpgradeSpecs(unit_folder);
+}
+
+void Unit::loadUnitName(QString unit_folder) {
+    QFile file(unit_folder + "unitname.txt");
+    QTextStream in(&file);
+    unit_name_ = in.readLine();
+}
+
+void Unit::loadUnitDescr(QString unit_folder) {
+    QFile file(unit_folder + "descr.txt");
+    QTextStream in(&file);
+    unit_descr_ = in.readAll();
+}
+
+void Unit::loadUnitBaseClass(QString unit_folder) {
+    QFile file(unit_folder + "baseclass.txt");
+    QTextStream in(&file);
+    base_class_id_ = in.readLine();
+}
+
+void Unit::loadUnitTraits(QString unit_folder) {
+   // TO BE DONE!!!
+    health_points_ = rand();
+    activity_points_ = rand();
+    attack_cost_ = rand();
+    attack_range_ = rand();
+}
+
+void Unit::loadUnitIcon(QString unit_folder) {
+    unit_icon_.load(unit_folder + "icon.png");
+}
+
+void Unit::loadUnitPrevSpecs(QString unit_folder) {
+    QFile file(unit_folder + "prevgrades.txt");
+    QTextStream in(&file);
+    QString line = in.readLine();
+    while (in.atEnd()) {
+        parent_specs_.push_back(line);
+        line = in.readLine();
+    }
+}
+
+void Unit::loadUnitUpgradeSpecs(QString unit_folder) {
+    QFile file(unit_folder + "nextgrades.txt");
+    QTextStream in(&file);
+    QString line = in.readLine();
+    while (in.atEnd()) {
+        upgrade_specs_.push_back(line);
+        line = in.readLine();
+    }
+}
 
 int Unit::getCost(){
 	return cost_;
 }
 
-void Unit::setCost(int value){
-	cost_ = value;
+std::vector<QString> Unit::getParentSpecs(){
+    return parent_specs_;
 }
 
-std::string Unit::getParentSpec(){
-	return parent_spec_;
-}
-
-void Unit::setParentSpec(std::string specId){
-	parent_spec_ = specId;
-}
-
-std::vector<std::string> Unit::getUpgradeSpecs(){
+std::vector<QString> Unit::getUpgradeSpecs(){
 	return upgrade_specs_;
-}
-
-void Unit::setUpgradeSpecs(std::vector<std::string> specs){
-	upgrade_specs_ = specs;
 }
 
 double Unit::getExperience() {
 	return experience_;
 }
-void Unit::setExperience(double value) {
-	experience_ = value;
-}
 
 double Unit::getLevel() {
 	return level_;
-};
-void Unit::setLevel(double value) {
-	level_ = value;
 }
 
 double Unit::getHealthPoints() {
 	return health_points_;
-};
-void Unit::setHealthPoints(double value) {
-	health_points_ = value;
 }
 
 double Unit::getAttackRange() {
 	return attack_range_;
 }
-void Unit::setAttackRange(double value) {
-	attack_range_ = value;
-}
 
 int Unit::getActivityPoints(){
 	return activity_points_;
-}
-void Unit::setActivityPoints(int value){
-	activity_points_ = value;
 }
 
 Cell* Unit::getLocation() {
 	return location_;
 }
+
 void Unit::setLocation(Cell* to) {
 	location_ = to;
 }
@@ -74,83 +122,47 @@ void Unit::setLocation(Cell* to) {
 int Unit::getMovementSpeed() {
 	return movement_speed_;
 }
-void Unit::setMovementSpeed(int value) {
-	movement_speed_ = value;
-}
 
 int Unit::getAttackCost(){
 	return attack_cost_;
-}
-void Unit::setAttackCost(int value){
-	attack_cost_ = value;
 }
 
 double Unit::getInitiative() {
 	return initiative_;
 }
-void Unit::setInitiative(double value) {
-	initiative_ = value;
-}
 
 double Unit::getDamagePerHit() {
 	return damage_per_hit_;
-}
-void Unit::setDamagePerHit(double value) {
-	damage_per_hit_ = value;
 }
 
 double Unit::getIntelligence() {
 	return intelligence_;
 }
-void Unit::setIntelligence(double value) {
-	intelligence_ = value;
-}
 
 double Unit::getStrength() {
 	return strength_;
-}
-void Unit::setStrength(double value) {
-	strength_ = value;
 }
 
 double Unit::getAgility() {
 	return agility_;
 }
-void Unit::setAgility(double value) {
-	agility_ = value;
-}
 
 int Unit::getAttackPoints(){
 	return attack_cost_;
-}
-void Unit::setAttackPoints(int value){
-	attack_cost_ = value;
 }
 
 double Unit::getMagicDefence() {
 	return magic_defence_;
 }
-void Unit::setMagicDefence(double value) {
-	magic_defence_ = value;
-}
 
 double Unit::getPhysicDefence() {
 	return physic_defence_;
-}
-void Unit::setPhysicDefence(double value) {
-	physic_defence_ = value;
-}
-
-std::string Unit::getRace() {
-	return race_;
-}
-void Unit::setRace(std::string new_race) {
-	race_ = new_race;
 }
 
 double Unit::getRealX() {
 	return real_x_;
 }
+
 void Unit::setRealX(double x) {
 	real_x_ = x;
 }
@@ -158,6 +170,7 @@ void Unit::setRealX(double x) {
 double Unit::getRealY() {
 	return real_y_;
 }
+
 void Unit::setRealY(double y) {
 	real_y_ = y;
 }
@@ -195,8 +208,32 @@ void Unit::moveToCell(Cell* destination) {
 	if (!canMoveToCell(destination))
 		return;	//here could be a gui-message about failed move (x-mark, for example)
 	else {
-		int decreasedValue = getMovementSpeed() - lenOfActualPath(destination);
-		setMovementSpeed(decreasedValue);
+        movement_speed_ -= lenOfActualPath(destination);
 		setLocation(destination);
 	}
+}
+
+QString Unit::getUnitName() const {
+    return unit_name_;
+}
+
+QString Unit::getUnitDescr() const {
+    return unit_descr_;
+}
+
+QString Unit::getUnitBaseClassId() const {
+    return base_class_id_;
+}
+
+std::vector<QString> Unit::getUnitTraits() const {
+    return {
+            QString::number(health_points_),
+            QString::number(attack_range_),
+            QString::number(activity_points_),
+            QString::number(initiative_)
+    };
+}
+
+QImage Unit::getUnitIcon() const {
+    return unit_icon_;
 }

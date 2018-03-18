@@ -6,7 +6,7 @@
 #include <QApplication>
 
 MainMenu::MainMenu(QWidget *parent) :
-    QWidget(parent),
+    Scene(parent),
     ui(new Ui::MainMenu)
 {
     ui->setupUi(this);

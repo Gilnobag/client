@@ -1,9 +1,12 @@
 #include "gui/playervsplayerintro.h"
 #include "gui/guiscenemanager.h"
+#include "playermanager.h"
+#include "gui/scene.h"
+
 #include "ui_playervsplayerintro.h"
 
 PlayerVsPlayerIntro::PlayerVsPlayerIntro(QWidget *parent) :
-    QWidget(parent),
+    Scene(parent),
     ui(new Ui::PlayerVsPlayerIntro)
 {
     ui->setupUi(this);
@@ -21,5 +24,7 @@ void PlayerVsPlayerIntro::on_back_to_menu_clicked()
 
 void PlayerVsPlayerIntro::on_go_next_clicked()
 {
-    GuiSceneManager::getInstance().changeScene("recruit_army");
+    PlayerManager::getInstance().setPlayersNum(2);
+    /// TODO - Check if money input correct
+    GuiSceneManager::getInstance().changeScene("recruit_army", "1|" + ui->money_->text());
 }
