@@ -65,6 +65,8 @@ private:
 private slots:
     void on_back_button_clicked();
 
+    void on_apply_clicked();
+
 private:
     int available_money_;
     int current_money_;

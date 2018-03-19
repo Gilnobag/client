@@ -416,3 +416,12 @@ void RecruitmentScene::onGradeUnitIconDoubleClicked(UnitIcon* icon) {
     setMoney(current_money_);
 }
 
+
+void RecruitmentScene::on_apply_clicked()
+{
+    qDebug() << "Exiting recruit army scene with player_id =" << current_player_id_;
+    if (current_player_id_ == 0) {
+        qDebug() << "Changing to 1";
+        GuiSceneManager::getInstance().changeScene("recruit_army", "1|" + QString::number(available_money_));
+    }
+}

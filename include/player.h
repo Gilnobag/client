@@ -31,7 +31,7 @@ public:
     }
 
     void init(int id) {
-        player_name_ = "Игрок " + QString::number(id);
+        player_name_ = "Игрок " + QString::number(id + 1);
         race_ = RaceManager::getInstance().getRace(
                     RaceManager::getInstance().getAvailableRacesList()[0]
                 );

@@ -33,7 +33,7 @@ bool GuiSceneManager::registerScene(QString scene_name, Scene* name) {
 }
 
 bool GuiSceneManager::changeScene(QString scene_name, QString args) {
-    if (scene_name == current_scene_ || scene_name == "main_window") {
+    if (scene_name == "main_window") {
         return false;
     }
 

@@ -110,7 +110,7 @@ void UnitIcon::mousePressEvent(QMouseEvent*)
     activate();
 
     QTime current_time = QTime::currentTime();
-    if (current_time.msecsSinceStartOfDay() - previous_click_time_.msecsSinceStartOfDay() < 300) {
+    if (current_time.msecsSinceStartOfDay() - previous_click_time_.msecsSinceStartOfDay() < 350) {
         deactivate();
         emit doubleclicked(this);
     } else {
