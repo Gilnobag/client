@@ -11,7 +11,7 @@ public:
 
     virtual ~Scene() {}
 
-    virtual void parseArgs(QString args) {}
+    virtual void parseArgs(QString) {}
 
     virtual void init() {}
 

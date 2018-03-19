@@ -15,8 +15,8 @@ Unit::Unit(QString parameters) {
 
     assert(params.size() >= 2);
 
-    unit_id_ = params[0];
-    race_id_ = params[1];
+    race_id_ = params[0];
+    unit_id_ = params[1];
 
     QString unit_folder = ":/assets/units/" + race_id_ + "/" + unit_id_ + "/";
 
@@ -31,18 +31,21 @@ Unit::Unit(QString parameters) {
 
 void Unit::loadUnitName(QString unit_folder) {
     QFile file(unit_folder + "unitname.txt");
+    file.open(QIODevice::ReadOnly);
     QTextStream in(&file);
     unit_name_ = in.readLine();
 }
 
 void Unit::loadUnitDescr(QString unit_folder) {
     QFile file(unit_folder + "descr.txt");
+    file.open(QIODevice::ReadOnly);
     QTextStream in(&file);
     unit_descr_ = in.readAll();
 }
 
 void Unit::loadUnitBaseClass(QString unit_folder) {
     QFile file(unit_folder + "baseclass.txt");
+    file.open(QIODevice::ReadOnly);
     QTextStream in(&file);
     base_class_id_ = in.readLine();
 }
@@ -61,22 +64,29 @@ void Unit::loadUnitIcon(QString unit_folder) {
 
 void Unit::loadUnitPrevSpecs(QString unit_folder) {
     QFile file(unit_folder + "prevgrades.txt");
+    file.open(QIODevice::ReadOnly);
     QTextStream in(&file);
     QString line = in.readLine();
-    while (in.atEnd()) {
+    while (!in.atEnd()) {
         parent_specs_.push_back(line);
         line = in.readLine();
     }
+    parent_specs_.push_back(line);
+    line = in.readLine();
+
 }
 
 void Unit::loadUnitUpgradeSpecs(QString unit_folder) {
     QFile file(unit_folder + "nextgrades.txt");
+    file.open(QIODevice::ReadOnly);
     QTextStream in(&file);
     QString line = in.readLine();
-    while (in.atEnd()) {
+    while (!in.atEnd()) {
         upgrade_specs_.push_back(line);
         line = in.readLine();
     }
+    upgrade_specs_.push_back(line);
+    line = in.readLine();
 }
 
 int Unit::getCost(){
@@ -113,9 +123,6 @@ int Unit::getActivityPoints(){
 
 int Unit::getStartingActivityPoints() {
 	return starting_activity_points_;
-}
-void Unit::setStartingActivityPoints(int value) {
-	starting_activity_points_ = value;
 }
 
 Cell* Unit::getLocation() {
@@ -218,6 +225,10 @@ void Unit::moveToCell(Cell* destination) {
         movement_speed_ -= lenOfActualPath(destination);
 		setLocation(destination);
 	}
+}
+
+QString Unit::getUnitId() const {
+    return unit_id_;
 }
 
 QString Unit::getUnitName() const {

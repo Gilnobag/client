@@ -23,9 +23,13 @@ public:
     void resize(int w, int h);
     void unsetUnitIcon();
 
+    Unit* getUnit();
+    void setUnit(Unit* unit);
+
     void deactivate();
     void activate();
 
+    void setState(int state);
 
 protected:
     void mousePressEvent(QMouseEvent* event);
@@ -34,10 +38,10 @@ protected:
 
 
 signals:
-    void clicked();
-    void doubleclicked();
-    void hovered();
-    void unhovered();
+    void clicked(UnitIcon*);
+    void doubleclicked(UnitIcon*);
+    void hovered(UnitIcon*);
+    void unhovered(UnitIcon*);
 
 private:
     void drawIcon();
@@ -57,6 +61,8 @@ private:
     QImage icon_;
 
     QTime previous_click_time_;
+
+    QImage result_;
 
     Unit* unit_;
 };

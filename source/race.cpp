@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QString>
+#include <QDebug>
 
 #include <cassert>
 #include <vector>
@@ -17,26 +18,37 @@ Race::Race(QString race_name, QObject *parent) : QObject(parent)
 
     units_factory_.addClass<Warrior, QString>("Warrior");
     units_factory_.addClass<Warrior, QString>("Mage");
+    units_factory_.addClass<Warrior, QString>("Rider");
+    units_factory_.addClass<Warrior, QString>("Rogue");
+    units_factory_.addClass<Warrior, QString>("Archer");
 
     QFile file(":/assets/units/" + race_name + "/units.txt");
+    file.open(QIODevice::ReadOnly);
     QTextStream in(&file);
     QString unit_name = in.readLine();
 
     while (!in.atEnd()) {
-        all_units_list_.push_back(createUnit(unit_name));
         available_units_list_.push_back(unit_name);
+        all_units_list_.push_back(createUnit(unit_name));
         unit_name = in.readLine();
     }
 
+    if (unit_name.length() > 2) {
+        available_units_list_.push_back(unit_name);
+        all_units_list_.push_back(createUnit(unit_name));
+    }
+
     QFile file0(":/assets/units/" + race_name + "/racename.txt");
-    QTextStream in0(&file);
+    file0.open(QIODevice::ReadOnly);
+    QTextStream in0(&file0);
     race_name_ = in0.readLine();
 
     QFile file1(":/assets/units/" + race_name + "/descr.txt");
-    QTextStream in1(&file);
+    file1.open(QIODevice::ReadOnly);
+    QTextStream in1(&file1);
     race_descr_ = in1.readAll();
 
-    race_icon_.load(":/assets/units/" + race_name + "/descr.txt");
+    race_icon_.load(":/assets/units/" + race_name + "/icon.png");
 }
 
 QString Race::getRaceId() {
@@ -56,12 +68,12 @@ QString Race::getRaceDescr() {
 }
 
 Unit* Race::createUnit(QString unit_name) {
-    assert(std::count(available_units_list_.begin(), available_units_list_.end(), unit_name) != 0);
-
-    QFile file(":/asserts/units/" + race_id_ + "/" + unit_name + "/baseclass.txt");
+    qDebug() << unit_name;
+    QFile file(":/assets/units/" + race_id_ + "/" + unit_name + "/baseclass.txt");
+    file.open(QIODevice::ReadOnly);
     QTextStream in(&file);
     QString class_id = in.readLine();
-
+    qDebug() << "Creating unit of base class " << class_id << " and major class" <<  race_id_ + "|" + unit_name;
     return units_factory_.createObject<QString>(class_id, race_id_ + "|" + unit_name);
 }
 
