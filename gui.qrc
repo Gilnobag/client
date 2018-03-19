@@ -23,6 +23,14 @@
         <file>assets/units/human/holy-spirit/skills.txt</file>
         <file>assets/units/human/holy-spirit/traits.txt</file>
         <file>assets/units/human/holy-spirit/unitname.txt</file>
+        <file>assets/units/human/human-adept-of-subtetly/baseclass.txt</file>
+        <file>assets/units/human/human-adept-of-subtetly/descr.txt</file>
+        <file>assets/units/human/human-adept-of-subtetly/icon.png</file>
+        <file>assets/units/human/human-adept-of-subtetly/nextgrades.txt</file>
+        <file>assets/units/human/human-adept-of-subtetly/prevgrades.txt</file>
+        <file>assets/units/human/human-adept-of-subtetly/skills.txt</file>
+        <file>assets/units/human/human-adept-of-subtetly/traits.txt</file>
+        <file>assets/units/human/human-adept-of-subtetly/unitname.txt</file>
         <file>assets/units/human/human-aerotheurger/baseclass.txt</file>
         <file>assets/units/human/human-aerotheurger/descr.txt</file>
         <file>assets/units/human/human-aerotheurger/icon.png</file>
@@ -47,6 +55,14 @@
         <file>assets/units/human/human-archer/skills.txt</file>
         <file>assets/units/human/human-archer/traits.txt</file>
         <file>assets/units/human/human-archer/unitname.txt</file>
+        <file>assets/units/human/human-army-bowman/baseclass.txt</file>
+        <file>assets/units/human/human-army-bowman/descr.txt</file>
+        <file>assets/units/human/human-army-bowman/icon.png</file>
+        <file>assets/units/human/human-army-bowman/nextgrades.txt</file>
+        <file>assets/units/human/human-army-bowman/prevgrades.txt</file>
+        <file>assets/units/human/human-army-bowman/skills.txt</file>
+        <file>assets/units/human/human-army-bowman/traits.txt</file>
+        <file>assets/units/human/human-army-bowman/unitname.txt</file>
         <file>assets/units/human/human-arsonist/baseclass.txt</file>
         <file>assets/units/human/human-arsonist/descr.txt</file>
         <file>assets/units/human/human-arsonist/icon.png</file>
@@ -55,6 +71,14 @@
         <file>assets/units/human/human-arsonist/skills.txt</file>
         <file>assets/units/human/human-arsonist/traits.txt</file>
         <file>assets/units/human/human-arsonist/unitname.txt</file>
+        <file>assets/units/human/human-assassin/baseclass.txt</file>
+        <file>assets/units/human/human-assassin/descr.txt</file>
+        <file>assets/units/human/human-assassin/icon.png</file>
+        <file>assets/units/human/human-assassin/nextgrades.txt</file>
+        <file>assets/units/human/human-assassin/prevgrades.txt</file>
+        <file>assets/units/human/human-assassin/skills.txt</file>
+        <file>assets/units/human/human-assassin/traits.txt</file>
+        <file>assets/units/human/human-assassin/unitname.txt</file>
         <file>assets/units/human/human-avenger/baseclass.txt</file>
         <file>assets/units/human/human-avenger/descr.txt</file>
         <file>assets/units/human/human-avenger/icon.png</file>
@@ -79,6 +103,22 @@
         <file>assets/units/human/human-berserker/skills.txt</file>
         <file>assets/units/human/human-berserker/traits.txt</file>
         <file>assets/units/human/human-berserker/unitname.txt</file>
+        <file>assets/units/human/human-big-game-hunter/baseclass.txt</file>
+        <file>assets/units/human/human-big-game-hunter/descr.txt</file>
+        <file>assets/units/human/human-big-game-hunter/icon.png</file>
+        <file>assets/units/human/human-big-game-hunter/nextgrades.txt</file>
+        <file>assets/units/human/human-big-game-hunter/prevgrades.txt</file>
+        <file>assets/units/human/human-big-game-hunter/skills.txt</file>
+        <file>assets/units/human/human-big-game-hunter/traits.txt</file>
+        <file>assets/units/human/human-big-game-hunter/unitname.txt</file>
+        <file>assets/units/human/human-brigand/baseclass.txt</file>
+        <file>assets/units/human/human-brigand/descr.txt</file>
+        <file>assets/units/human/human-brigand/icon.png</file>
+        <file>assets/units/human/human-brigand/nextgrades.txt</file>
+        <file>assets/units/human/human-brigand/prevgrades.txt</file>
+        <file>assets/units/human/human-brigand/skills.txt</file>
+        <file>assets/units/human/human-brigand/traits.txt</file>
+        <file>assets/units/human/human-brigand/unitname.txt</file>
         <file>assets/units/human/human-cataphract/baseclass.txt</file>
         <file>assets/units/human/human-cataphract/descr.txt</file>
         <file>assets/units/human/human-cataphract/icon.png</file>
@@ -127,6 +167,14 @@
         <file>assets/units/human/human-condottier/skills.txt</file>
         <file>assets/units/human/human-condottier/traits.txt</file>
         <file>assets/units/human/human-condottier/unitname.txt</file>
+        <file>assets/units/human/human-dancer-with-shadows/baseclass.txt</file>
+        <file>assets/units/human/human-dancer-with-shadows/descr.txt</file>
+        <file>assets/units/human/human-dancer-with-shadows/icon.png</file>
+        <file>assets/units/human/human-dancer-with-shadows/nextgrades.txt</file>
+        <file>assets/units/human/human-dancer-with-shadows/prevgrades.txt</file>
+        <file>assets/units/human/human-dancer-with-shadows/skills.txt</file>
+        <file>assets/units/human/human-dancer-with-shadows/traits.txt</file>
+        <file>assets/units/human/human-dancer-with-shadows/unitname.txt</file>
         <file>assets/units/human/human-defender/baseclass.txt</file>
         <file>assets/units/human/human-defender/descr.txt</file>
         <file>assets/units/human/human-defender/icon.png</file>
@@ -143,6 +191,14 @@
         <file>assets/units/human/human-demolisher/skills.txt</file>
         <file>assets/units/human/human-demolisher/traits.txt</file>
         <file>assets/units/human/human-demolisher/unitname.txt</file>
+        <file>assets/units/human/human-deserter/baseclass.txt</file>
+        <file>assets/units/human/human-deserter/descr.txt</file>
+        <file>assets/units/human/human-deserter/icon.png</file>
+        <file>assets/units/human/human-deserter/nextgrades.txt</file>
+        <file>assets/units/human/human-deserter/prevgrades.txt</file>
+        <file>assets/units/human/human-deserter/skills.txt</file>
+        <file>assets/units/human/human-deserter/traits.txt</file>
+        <file>assets/units/human/human-deserter/unitname.txt</file>
         <file>assets/units/human/human-druid/baseclass.txt</file>
         <file>assets/units/human/human-druid/descr.txt</file>
         <file>assets/units/human/human-druid/icon.png</file>
@@ -159,6 +215,14 @@
         <file>assets/units/human/human-duelist/skills.txt</file>
         <file>assets/units/human/human-duelist/traits.txt</file>
         <file>assets/units/human/human-duelist/unitname.txt</file>
+        <file>assets/units/human/human-farstrider/baseclass.txt</file>
+        <file>assets/units/human/human-farstrider/descr.txt</file>
+        <file>assets/units/human/human-farstrider/icon.png</file>
+        <file>assets/units/human/human-farstrider/nextgrades.txt</file>
+        <file>assets/units/human/human-farstrider/prevgrades.txt</file>
+        <file>assets/units/human/human-farstrider/skills.txt</file>
+        <file>assets/units/human/human-farstrider/traits.txt</file>
+        <file>assets/units/human/human-farstrider/unitname.txt</file>
         <file>assets/units/human/human-fencer/baseclass.txt</file>
         <file>assets/units/human/human-fencer/descr.txt</file>
         <file>assets/units/human/human-fencer/icon.png</file>
@@ -167,6 +231,14 @@
         <file>assets/units/human/human-fencer/skills.txt</file>
         <file>assets/units/human/human-fencer/traits.txt</file>
         <file>assets/units/human/human-fencer/unitname.txt</file>
+        <file>assets/units/human/human-flayer/baseclass.txt</file>
+        <file>assets/units/human/human-flayer/descr.txt</file>
+        <file>assets/units/human/human-flayer/icon.png</file>
+        <file>assets/units/human/human-flayer/nextgrades.txt</file>
+        <file>assets/units/human/human-flayer/prevgrades.txt</file>
+        <file>assets/units/human/human-flayer/skills.txt</file>
+        <file>assets/units/human/human-flayer/traits.txt</file>
+        <file>assets/units/human/human-flayer/unitname.txt</file>
         <file>assets/units/human/human-floromante/baseclass.txt</file>
         <file>assets/units/human/human-floromante/descr.txt</file>
         <file>assets/units/human/human-floromante/icon.png</file>
@@ -207,6 +279,14 @@
         <file>assets/units/human/human-hoplite/skills.txt</file>
         <file>assets/units/human/human-hoplite/traits.txt</file>
         <file>assets/units/human/human-hoplite/unitname.txt</file>
+        <file>assets/units/human/human-hunter/baseclass.txt</file>
+        <file>assets/units/human/human-hunter/descr.txt</file>
+        <file>assets/units/human/human-hunter/icon.png</file>
+        <file>assets/units/human/human-hunter/nextgrades.txt</file>
+        <file>assets/units/human/human-hunter/prevgrades.txt</file>
+        <file>assets/units/human/human-hunter/skills.txt</file>
+        <file>assets/units/human/human-hunter/traits.txt</file>
+        <file>assets/units/human/human-hunter/unitname.txt</file>
         <file>assets/units/human/human-hydromante/baseclass.txt</file>
         <file>assets/units/human/human-hydromante/descr.txt</file>
         <file>assets/units/human/human-hydromante/icon.png</file>
@@ -231,6 +311,14 @@
         <file>assets/units/human/human-lightning-mage/skills.txt</file>
         <file>assets/units/human/human-lightning-mage/traits.txt</file>
         <file>assets/units/human/human-lightning-mage/unitname.txt</file>
+        <file>assets/units/human/human-liquidator/baseclass.txt</file>
+        <file>assets/units/human/human-liquidator/descr.txt</file>
+        <file>assets/units/human/human-liquidator/icon.png</file>
+        <file>assets/units/human/human-liquidator/nextgrades.txt</file>
+        <file>assets/units/human/human-liquidator/prevgrades.txt</file>
+        <file>assets/units/human/human-liquidator/skills.txt</file>
+        <file>assets/units/human/human-liquidator/traits.txt</file>
+        <file>assets/units/human/human-liquidator/unitname.txt</file>
         <file>assets/units/human/human-mage/baseclass.txt</file>
         <file>assets/units/human/human-mage/descr.txt</file>
         <file>assets/units/human/human-mage/icon.png</file>
@@ -247,6 +335,30 @@
         <file>assets/units/human/human-magus-mage/skills.txt</file>
         <file>assets/units/human/human-magus-mage/traits.txt</file>
         <file>assets/units/human/human-magus-mage/unitname.txt</file>
+        <file>assets/units/human/human-marauder/baseclass.txt</file>
+        <file>assets/units/human/human-marauder/descr.txt</file>
+        <file>assets/units/human/human-marauder/icon.png</file>
+        <file>assets/units/human/human-marauder/nextgrades.txt</file>
+        <file>assets/units/human/human-marauder/prevgrades.txt</file>
+        <file>assets/units/human/human-marauder/skills.txt</file>
+        <file>assets/units/human/human-marauder/traits.txt</file>
+        <file>assets/units/human/human-marauder/unitname.txt</file>
+        <file>assets/units/human/human-marksman/baseclass.txt</file>
+        <file>assets/units/human/human-marksman/descr.txt</file>
+        <file>assets/units/human/human-marksman/icon.png</file>
+        <file>assets/units/human/human-marksman/nextgrades.txt</file>
+        <file>assets/units/human/human-marksman/prevgrades.txt</file>
+        <file>assets/units/human/human-marksman/skills.txt</file>
+        <file>assets/units/human/human-marksman/traits.txt</file>
+        <file>assets/units/human/human-marksman/unitname.txt</file>
+        <file>assets/units/human/human-master-of-subtetly/baseclass.txt</file>
+        <file>assets/units/human/human-master-of-subtetly/descr.txt</file>
+        <file>assets/units/human/human-master-of-subtetly/icon.png</file>
+        <file>assets/units/human/human-master-of-subtetly/nextgrades.txt</file>
+        <file>assets/units/human/human-master-of-subtetly/prevgrades.txt</file>
+        <file>assets/units/human/human-master-of-subtetly/skills.txt</file>
+        <file>assets/units/human/human-master-of-subtetly/traits.txt</file>
+        <file>assets/units/human/human-master-of-subtetly/unitname.txt</file>
         <file>assets/units/human/human-mistweaver/baseclass.txt</file>
         <file>assets/units/human/human-mistweaver/descr.txt</file>
         <file>assets/units/human/human-mistweaver/icon.png</file>
@@ -271,6 +383,14 @@
         <file>assets/units/human/human-mystic/skills.txt</file>
         <file>assets/units/human/human-mystic/traits.txt</file>
         <file>assets/units/human/human-mystic/unitname.txt</file>
+        <file>assets/units/human/human-outlaw/baseclass.txt</file>
+        <file>assets/units/human/human-outlaw/descr.txt</file>
+        <file>assets/units/human/human-outlaw/icon.png</file>
+        <file>assets/units/human/human-outlaw/nextgrades.txt</file>
+        <file>assets/units/human/human-outlaw/prevgrades.txt</file>
+        <file>assets/units/human/human-outlaw/skills.txt</file>
+        <file>assets/units/human/human-outlaw/traits.txt</file>
+        <file>assets/units/human/human-outlaw/unitname.txt</file>
         <file>assets/units/human/human-paladin/baseclass.txt</file>
         <file>assets/units/human/human-paladin/descr.txt</file>
         <file>assets/units/human/human-paladin/icon.png</file>
@@ -279,6 +399,14 @@
         <file>assets/units/human/human-paladin/skills.txt</file>
         <file>assets/units/human/human-paladin/traits.txt</file>
         <file>assets/units/human/human-paladin/unitname.txt</file>
+        <file>assets/units/human/human-pathfinder/baseclass.txt</file>
+        <file>assets/units/human/human-pathfinder/descr.txt</file>
+        <file>assets/units/human/human-pathfinder/icon.png</file>
+        <file>assets/units/human/human-pathfinder/nextgrades.txt</file>
+        <file>assets/units/human/human-pathfinder/prevgrades.txt</file>
+        <file>assets/units/human/human-pathfinder/skills.txt</file>
+        <file>assets/units/human/human-pathfinder/traits.txt</file>
+        <file>assets/units/human/human-pathfinder/unitname.txt</file>
         <file>assets/units/human/human-pikeman/baseclass.txt</file>
         <file>assets/units/human/human-pikeman/descr.txt</file>
         <file>assets/units/human/human-pikeman/icon.png</file>
@@ -287,6 +415,14 @@
         <file>assets/units/human/human-pikeman/skills.txt</file>
         <file>assets/units/human/human-pikeman/traits.txt</file>
         <file>assets/units/human/human-pikeman/unitname.txt</file>
+        <file>assets/units/human/human-poisoner/baseclass.txt</file>
+        <file>assets/units/human/human-poisoner/descr.txt</file>
+        <file>assets/units/human/human-poisoner/icon.png</file>
+        <file>assets/units/human/human-poisoner/nextgrades.txt</file>
+        <file>assets/units/human/human-poisoner/prevgrades.txt</file>
+        <file>assets/units/human/human-poisoner/skills.txt</file>
+        <file>assets/units/human/human-poisoner/traits.txt</file>
+        <file>assets/units/human/human-poisoner/unitname.txt</file>
         <file>assets/units/human/human-priest/baseclass.txt</file>
         <file>assets/units/human/human-priest/descr.txt</file>
         <file>assets/units/human/human-priest/icon.png</file>
@@ -335,6 +471,46 @@
         <file>assets/units/human/human-rogue/skills.txt</file>
         <file>assets/units/human/human-rogue/traits.txt</file>
         <file>assets/units/human/human-rogue/unitname.txt</file>
+        <file>assets/units/human/human-royal-archer/baseclass.txt</file>
+        <file>assets/units/human/human-royal-archer/descr.txt</file>
+        <file>assets/units/human/human-royal-archer/icon.png</file>
+        <file>assets/units/human/human-royal-archer/nextgrades.txt</file>
+        <file>assets/units/human/human-royal-archer/prevgrades.txt</file>
+        <file>assets/units/human/human-royal-archer/skills.txt</file>
+        <file>assets/units/human/human-royal-archer/traits.txt</file>
+        <file>assets/units/human/human-royal-archer/unitname.txt</file>
+        <file>assets/units/human/human-saboteur/baseclass.txt</file>
+        <file>assets/units/human/human-saboteur/descr.txt</file>
+        <file>assets/units/human/human-saboteur/icon.png</file>
+        <file>assets/units/human/human-saboteur/nextgrades.txt</file>
+        <file>assets/units/human/human-saboteur/prevgrades.txt</file>
+        <file>assets/units/human/human-saboteur/skills.txt</file>
+        <file>assets/units/human/human-saboteur/traits.txt</file>
+        <file>assets/units/human/human-saboteur/unitname.txt</file>
+        <file>assets/units/human/human-sharpshooter/baseclass.txt</file>
+        <file>assets/units/human/human-sharpshooter/descr.txt</file>
+        <file>assets/units/human/human-sharpshooter/icon.png</file>
+        <file>assets/units/human/human-sharpshooter/nextgrades.txt</file>
+        <file>assets/units/human/human-sharpshooter/prevgrades.txt</file>
+        <file>assets/units/human/human-sharpshooter/skills.txt</file>
+        <file>assets/units/human/human-sharpshooter/traits.txt</file>
+        <file>assets/units/human/human-sharpshooter/unitname.txt</file>
+        <file>assets/units/human/human-skirmisher/baseclass.txt</file>
+        <file>assets/units/human/human-skirmisher/descr.txt</file>
+        <file>assets/units/human/human-skirmisher/icon.png</file>
+        <file>assets/units/human/human-skirmisher/nextgrades.txt</file>
+        <file>assets/units/human/human-skirmisher/prevgrades.txt</file>
+        <file>assets/units/human/human-skirmisher/skills.txt</file>
+        <file>assets/units/human/human-skirmisher/traits.txt</file>
+        <file>assets/units/human/human-skirmisher/unitname.txt</file>
+        <file>assets/units/human/human-slayer/baseclass.txt</file>
+        <file>assets/units/human/human-slayer/descr.txt</file>
+        <file>assets/units/human/human-slayer/icon.png</file>
+        <file>assets/units/human/human-slayer/nextgrades.txt</file>
+        <file>assets/units/human/human-slayer/prevgrades.txt</file>
+        <file>assets/units/human/human-slayer/skills.txt</file>
+        <file>assets/units/human/human-slayer/traits.txt</file>
+        <file>assets/units/human/human-slayer/unitname.txt</file>
         <file>assets/units/human/human-spearman/baseclass.txt</file>
         <file>assets/units/human/human-spearman/descr.txt</file>
         <file>assets/units/human/human-spearman/icon.png</file>
@@ -359,6 +535,14 @@
         <file>assets/units/human/human-suppressor/skills.txt</file>
         <file>assets/units/human/human-suppressor/traits.txt</file>
         <file>assets/units/human/human-suppressor/unitname.txt</file>
+        <file>assets/units/human/human-thug/baseclass.txt</file>
+        <file>assets/units/human/human-thug/descr.txt</file>
+        <file>assets/units/human/human-thug/icon.png</file>
+        <file>assets/units/human/human-thug/nextgrades.txt</file>
+        <file>assets/units/human/human-thug/prevgrades.txt</file>
+        <file>assets/units/human/human-thug/skills.txt</file>
+        <file>assets/units/human/human-thug/traits.txt</file>
+        <file>assets/units/human/human-thug/unitname.txt</file>
         <file>assets/units/human/human-tormentor/baseclass.txt</file>
         <file>assets/units/human/human-tormentor/descr.txt</file>
         <file>assets/units/human/human-tormentor/icon.png</file>
@@ -367,6 +551,22 @@
         <file>assets/units/human/human-tormentor/skills.txt</file>
         <file>assets/units/human/human-tormentor/traits.txt</file>
         <file>assets/units/human/human-tormentor/unitname.txt</file>
+        <file>assets/units/human/human-trailblazer/baseclass.txt</file>
+        <file>assets/units/human/human-trailblazer/descr.txt</file>
+        <file>assets/units/human/human-trailblazer/icon.png</file>
+        <file>assets/units/human/human-trailblazer/nextgrades.txt</file>
+        <file>assets/units/human/human-trailblazer/prevgrades.txt</file>
+        <file>assets/units/human/human-trailblazer/skills.txt</file>
+        <file>assets/units/human/human-trailblazer/traits.txt</file>
+        <file>assets/units/human/human-trailblazer/unitname.txt</file>
+        <file>assets/units/human/human-trapper/baseclass.txt</file>
+        <file>assets/units/human/human-trapper/descr.txt</file>
+        <file>assets/units/human/human-trapper/icon.png</file>
+        <file>assets/units/human/human-trapper/nextgrades.txt</file>
+        <file>assets/units/human/human-trapper/prevgrades.txt</file>
+        <file>assets/units/human/human-trapper/skills.txt</file>
+        <file>assets/units/human/human-trapper/traits.txt</file>
+        <file>assets/units/human/human-trapper/unitname.txt</file>
         <file>assets/units/human/human-voodoo/baseclass.txt</file>
         <file>assets/units/human/human-voodoo/descr.txt</file>
         <file>assets/units/human/human-voodoo/icon.png</file>
@@ -429,6 +629,50 @@
         <file>assets/units/human/second-icon.png</file>
         <file>assets/units/human/units.txt</file>
         <file>assets/units/norace/nounit/icon.png</file>
+        <file>assets/units/undead/undead-archer/baseclass.txt</file>
+        <file>assets/units/undead/undead-archer/descr.txt</file>
+        <file>assets/units/undead/undead-archer/icon.png</file>
+        <file>assets/units/undead/undead-archer/nextgrades.txt</file>
+        <file>assets/units/undead/undead-archer/prevgrades.txt</file>
+        <file>assets/units/undead/undead-archer/skills.txt</file>
+        <file>assets/units/undead/undead-archer/traits.txt</file>
+        <file>assets/units/undead/undead-archer/unitname.txt</file>
+        <file>assets/units/undead/undead-mage/baseclass.txt</file>
+        <file>assets/units/undead/undead-mage/descr.txt</file>
+        <file>assets/units/undead/undead-mage/icon.png</file>
+        <file>assets/units/undead/undead-mage/nextgrades.txt</file>
+        <file>assets/units/undead/undead-mage/prevgrades.txt</file>
+        <file>assets/units/undead/undead-mage/skills.txt</file>
+        <file>assets/units/undead/undead-mage/traits.txt</file>
+        <file>assets/units/undead/undead-mage/unitname.txt</file>
+        <file>assets/units/undead/undead-rider/baseclass.txt</file>
+        <file>assets/units/undead/undead-rider/descr.txt</file>
+        <file>assets/units/undead/undead-rider/icon.png</file>
+        <file>assets/units/undead/undead-rider/nextgrades.txt</file>
+        <file>assets/units/undead/undead-rider/prevgrades.txt</file>
+        <file>assets/units/undead/undead-rider/skills.txt</file>
+        <file>assets/units/undead/undead-rider/traits.txt</file>
+        <file>assets/units/undead/undead-rider/unitname.txt</file>
+        <file>assets/units/undead/undead-rogue/baseclass.txt</file>
+        <file>assets/units/undead/undead-rogue/descr.txt</file>
+        <file>assets/units/undead/undead-rogue/icon.png</file>
+        <file>assets/units/undead/undead-rogue/nextgrades.txt</file>
+        <file>assets/units/undead/undead-rogue/prevgrades.txt</file>
+        <file>assets/units/undead/undead-rogue/skills.txt</file>
+        <file>assets/units/undead/undead-rogue/traits.txt</file>
+        <file>assets/units/undead/undead-rogue/unitname.txt</file>
+        <file>assets/units/undead/undead-warrior/baseclass.txt</file>
+        <file>assets/units/undead/undead-warrior/descr.txt</file>
+        <file>assets/units/undead/undead-warrior/icon.png</file>
+        <file>assets/units/undead/undead-warrior/nextgrades.txt</file>
+        <file>assets/units/undead/undead-warrior/prevgrades.txt</file>
+        <file>assets/units/undead/undead-warrior/skills.txt</file>
+        <file>assets/units/undead/undead-warrior/traits.txt</file>
+        <file>assets/units/undead/undead-warrior/unitname.txt</file>
+        <file>assets/units/undead/descr.txt</file>
+        <file>assets/units/undead/icon.png</file>
+        <file>assets/units/undead/racename.txt</file>
+        <file>assets/units/undead/units.txt</file>
         <file>assets/units/warcraft/blademaster/baseclass.txt</file>
         <file>assets/units/warcraft/blademaster/descr.txt</file>
         <file>assets/units/warcraft/blademaster/icon.png</file>
@@ -499,6 +743,11 @@
         <file>assets/units/warcraft/racename.txt</file>
         <file>assets/units/warcraft/units.txt</file>
         <file>assets/units/races.txt</file>
+        <file>assets/unittrees/human-archer.png</file>
+        <file>assets/unittrees/human-mage.png</file>
+        <file>assets/unittrees/human-rider.png</file>
+        <file>assets/unittrees/human-rogue.png</file>
+        <file>assets/unittrees/human-warrior.png</file>
         <file>assets/window/thick_opaque-background.png</file>
         <file>assets/window/thick_opaque-border-botleft.png</file>
         <file>assets/window/thick_opaque-border-botright.png</file>

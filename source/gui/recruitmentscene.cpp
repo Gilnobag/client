@@ -32,7 +32,7 @@ RecruitmentScene::RecruitmentScene(QWidget *parent)
         connect(available_units_icons_[i], SIGNAL(doubleclicked(UnitIcon*)), this, SLOT(onUnitIconDoubleClicked(UnitIcon*)));
     }
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         available_races_icons_[i] = new RaceIcon();
         ui->availableRacesLayout_->addWidget(available_races_icons_[i], i);
 
@@ -124,7 +124,7 @@ void RecruitmentScene::initAvailableRaces() {
 
     int race_id = 0;
     for (QString race_name : races) {
-        assert(race_id < 2);
+        assert(race_id < 3);
         auto race = RaceManager::getInstance().getRace(race_name);
         available_races_icons_[race_id]->setRaceIcon(race->getRaceIcon());
         available_races_icons_[race_id]->setRace(race);
@@ -295,7 +295,7 @@ void RecruitmentScene::onUnitIconClicked(UnitIcon* icon) {
         chosen_units_icons_[i]->deactivate();
     }
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         available_races_icons_[i]->deactivate();
     }
 
@@ -330,7 +330,7 @@ void RecruitmentScene::onChosenUnitIconClicked(UnitIcon* icon) {
             chosen_units_icons_[i]->deactivate();
     }
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         available_races_icons_[i]->deactivate();
     }
 
@@ -367,7 +367,7 @@ void RecruitmentScene::onRaceIconClicked(RaceIcon* icon) {
         chosen_units_icons_[i]->deactivate();
     }
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         if (available_races_icons_[i] != icon)
             available_races_icons_[i]->deactivate();
     }
