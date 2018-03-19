@@ -21,7 +21,7 @@ public:
 	bool isEmpty() { 
 		return true;
 	}
-	std::vector <Cell*> actualPath(Cell* destination) { //the shortest existing path from (*this) to (*destination)
+    std::vector <Cell*> actualPath(Cell*) { //the shortest existing path from (*this) to (*destination)
 		std::vector <Cell*> path;
 		return path;
 	}
@@ -53,6 +53,7 @@ public:
     int    getAttackPoints();
     int    getAttackCost();
     double getAttackRange();
+    int    getStartingActivityPoints();
 
     double getHealthPoints();
 
@@ -87,11 +88,11 @@ public:
 
     virtual double reduceIncomingDamage(std::string damageType, int value);
 
-    virtual	bool canAttackForDistance(int distance) {}
+    virtual	bool canAttackForDistance(int ) {return false;}
 
-    virtual bool canAttackToCell(Cell* destination) {}
+    virtual bool canAttackToCell(Cell* ) {return false;}
 
-    virtual bool canAttackUnit(Unit* target) {}
+    virtual bool canAttackUnit(Unit* ) {return false;}
 
     //---------------------------------------------//
     //-------Movement checkers & calculators-------//
@@ -106,10 +107,12 @@ public:
 
     virtual void moveToCell(Cell* destination);
 
+
     //---------------------------------------------//
     //----------------GUI section------------------//
     //---------------------------------------------//
 
+    QString getUnitId() const;
     QString getUnitName() const;
     QString getUnitDescr() const;
     QString getUnitBaseClassId() const;
@@ -166,6 +169,7 @@ protected:
     double intelligence_;
     double strength_;
     int attack_cost_;     //how many activity points does attack cost
+    int starting_activity_points_;
 
     //durability
     double health_points_;

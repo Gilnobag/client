@@ -1,7 +1,7 @@
 #ifndef RACEICON_H
 #define RACEICON_H
 
-#include "units/unit.h"
+#include "race.h"
 
 #include <QObject>
 #include <QWidget>
@@ -18,26 +18,29 @@ public:
     explicit RaceIcon(QWidget* parent = 0, int width = 64, int height = 64);
     ~RaceIcon();
 
-    void setRaceIcon(QString racename);
     void setRaceIcon(QImage icon);
     void resize(int w, int h);
     void unsetRaceIcon();
 
+    Race* getRace();
+    void setRace(Race* race);
+
+    int getState();
+    void setState(int state);
+
     void deactivate();
     void activate();
 
-
 protected:
-    void mousePressEvent(QMouseEvent* event);
-    void enterEvent(QEvent* event);
-    void leaveEvent(QEvent* event);
-
+    void mousePressEvent(QMouseEvent* event) override;
+    void enterEvent(QEvent* event) override;
+    void leaveEvent(QEvent* event) override;
 
 signals:
-    void clicked();
-    void doubleclicked();
-    void hovered();
-    void unhovered();
+    void clicked(RaceIcon*);
+    void doubleclicked(RaceIcon*);
+    void hovered(RaceIcon*);
+    void unhovered(RaceIcon*);
 
 private:
     void drawIcon();
@@ -58,7 +61,7 @@ private:
 
     QTime previous_click_time_;
 
-    Unit* unit_;
+    Race* race_;
 };
 
 #endif // RACEICON_H

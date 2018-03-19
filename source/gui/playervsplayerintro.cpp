@@ -26,5 +26,5 @@ void PlayerVsPlayerIntro::on_go_next_clicked()
 {
     PlayerManager::getInstance().setPlayersNum(2);
     /// TODO - Check if money input correct
-    GuiSceneManager::getInstance().changeScene("recruit_army", "1|" + ui->money_->text());
+    GuiSceneManager::getInstance().changeScene("recruit_army", "0|" + ui->money_->text());
 }

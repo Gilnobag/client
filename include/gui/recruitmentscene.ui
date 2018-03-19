@@ -26,7 +26,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#FDEAA8;&quot;&gt;Выбранная раса:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="chosen_race_image_">
+  <widget class="RaceIcon" name="chosen_race_image_">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -42,8 +42,8 @@
   <widget class="QLabel" name="available_races_text_">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>110</y>
+     <x>450</x>
+     <y>150</y>
      <width>201</width>
      <height>31</height>
     </rect>
@@ -55,24 +55,27 @@
   <widget class="QWidget" name="available_races_list_" native="true">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>150</y>
-     <width>521</width>
+     <x>660</x>
+     <y>130</y>
+     <width>144</width>
      <height>72</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="availableRacesLayout_">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <property name="leftMargin">
-     <number>5</number>
+     <number>0</number>
     </property>
     <property name="topMargin">
-     <number>5</number>
+     <number>0</number>
     </property>
     <property name="rightMargin">
-     <number>5</number>
+     <number>0</number>
     </property>
     <property name="bottomMargin">
-     <number>5</number>
+     <number>0</number>
     </property>
    </layout>
   </widget>
@@ -217,30 +220,49 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/assets/common/Scroll.png&quot; width=&quot;321&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="name_text_">
+   <widget class="QLabel" name="desctiption_title_">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>60</y>
+      <x>100</x>
+      <y>70</y>
       <width>161</width>
-      <height>21</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#000080;&quot;&gt;Название юнита&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; font-size:16px; color:#000080;&quot;&gt;Название юнита&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="description_text_">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>90</y>
-      <width>171</width>
-      <height>161</height>
+      <y>120</y>
+      <width>231</width>
+      <height>191</height>
      </rect>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000080;&quot;&gt;Здоровье:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#000080;&quot;&gt;Сила:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#000080;&quot;&gt;Урон:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#000080;&quot;&gt;Удар:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#000080;&quot;&gt;Удача:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#000080;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="UnitIcon" name="description_icon_">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>70</y>
+      <width>45</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/assets/units/warcraft/blademaster/icon.png&quot; width=&quot;45&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
@@ -292,19 +314,6 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#fdeaa8;&quot;&gt;Специализация&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="UnitIcon" name="parent_spec_unit_">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>40</y>
-      <width>45</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/assets/units/warcraft/blademaster/icon.png&quot; width=&quot;45&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="arrow_down_1_">
     <property name="geometry">
      <rect>
@@ -340,7 +349,7 @@
       <height>45</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="next_gen_units_layout_">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -356,34 +365,6 @@
      <property name="bottomMargin">
       <number>0</number>
      </property>
-     <item>
-      <widget class="UnitIcon" name="next_spec_unit_1_">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/assets/units/warcraft/rogue/icon.png&quot; width=&quot;45&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="UnitIcon" name="next_spec_unit_2_">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/assets/units/warcraft/ogremagi/icon.png&quot; width=&quot;45&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="UnitIcon" name="next_spec_unit_3_">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/assets/units/warcraft/wargraider/icon.png&quot; width=&quot;45&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="UnitIcon" name="next_spec_unit_4_">
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/assets/units/warcraft/wyvern/icon.png&quot; width=&quot;45&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QLabel" name="arrow_down_2_">
@@ -399,22 +380,33 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/assets/common/strelka.png&quot; width=&quot;25&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <zorder>spec_title_</zorder>
-   <zorder>arrow_down_1_</zorder>
-   <zorder>parent_spec_unit_</zorder>
-   <zorder>current_spec_unit_</zorder>
-   <zorder>next_gen_units_list_</zorder>
-   <zorder>arrow_down_2_</zorder>
-  </widget>
-  <widget class="QWidget" name="widget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>430</y>
-     <width>320</width>
-     <height>128</height>
-    </rect>
-   </property>
+   <widget class="QWidget" name="prev_gen_units_list_" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>180</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="prev_gen_units_layout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+    </layout>
+   </widget>
   </widget>
   <zorder>divider_</zorder>
   <zorder>chosen_race_text_</zorder>
@@ -431,13 +423,12 @@
   <zorder>available_money_text_</zorder>
   <zorder>apply</zorder>
   <zorder>unit_spec_widget_</zorder>
-  <zorder>widget</zorder>
  </widget>
  <customwidgets>
   <customwidget>
    <class>Scene</class>
    <extends>QWidget</extends>
-   <header location="global">gui/scene.h</header>
+   <header>gui/scene.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -450,6 +441,11 @@
     <signal>hovered()</signal>
     <signal>unhovered()</signal>
    </slots>
+  </customwidget>
+  <customwidget>
+   <class>RaceIcon</class>
+   <extends>QLabel</extends>
+   <header>gui/raceicon.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
