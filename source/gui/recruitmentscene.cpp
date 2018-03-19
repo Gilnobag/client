@@ -423,5 +423,7 @@ void RecruitmentScene::on_apply_clicked()
     if (current_player_id_ == 0) {
         qDebug() << "Changing to 1";
         GuiSceneManager::getInstance().changeScene("recruit_army", "1|" + QString::number(available_money_));
+    } else {
+        GuiSceneManager::getInstance().changeScene("prebattle");
     }
 }

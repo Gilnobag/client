@@ -8,9 +8,7 @@ GUI::GUI(QWidget *parent) :
     ui_(new Ui::GUI), dx_(0), dy_(0)
 {
     ui_->setupUi(this);
-
-    //rq_scene_ = new RecruitmentScene(ui_->main_content_);   /// Инициализируем графическую сцену выбора юнитов
-    //rq_scene_->show();
+    setWindowTitle("Супер-мега-клёвая-игрушка-название-которой-мы-ещё-не-придумали");
 }
 
 GUI::~GUI()

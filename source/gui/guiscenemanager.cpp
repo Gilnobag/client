@@ -3,6 +3,7 @@
 #include "gui/detatchedwidget.h"
 #include "gui/mainmenu.h"
 #include "gui/playervsplayerintro.h"
+#include "gui/prebattlescene.h"
 
 GuiSceneManager::GuiSceneManager(QObject *parent) : QObject(parent) {
     gui_ = new GUI();
@@ -12,6 +13,7 @@ GuiSceneManager::GuiSceneManager(QObject *parent) : QObject(parent) {
     registerScene("main_menu", new MainMenu(gui_->mainContentScene()));
     registerScene("pvp_intro", new PlayerVsPlayerIntro(gui_->mainContentScene()));
     registerScene("recruit_army", new RecruitmentScene(gui_->mainContentScene()));
+    registerScene("prebattle", new PreBattleScene(gui_->mainContentScene()));
 
     changeScene("main_menu");
 }
@@ -41,6 +43,7 @@ bool GuiSceneManager::changeScene(QString scene_name, QString args) {
         scenes_[current_scene_]->hide();
 
     scenes_[scene_name]->parseArgs(args);
+    scenes_[scene_name]->init();
     scenes_[scene_name]->show();
     current_scene_ = scene_name;
     return true;

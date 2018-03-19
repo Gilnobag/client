@@ -41,7 +41,8 @@ SOURCES += \
     source/units/warrior.cpp \
     source/gui/scene.cpp \
     source/gui/raceicon.cpp \
-    source/playermanager.cpp
+    source/playermanager.cpp \
+    source/gui/prebattlescene.cpp
 
 HEADERS += \
     include/gui/uniticon.h \
@@ -60,13 +61,17 @@ HEADERS += \
     include/units/warrior.h \
     include/gui/scene.h \
     include/gui/raceicon.h \
-    include/playermanager.h
+    include/playermanager.h \
+    include/gui/prebattlescene.h
 
 FORMS += \
     include/gui/gui.ui \
     include/gui/recruitmentscene.ui \
     include/gui/mainmenu.ui \
-    include/gui/playervsplayerintro.ui
+    include/gui/playervsplayerintro.ui \
+    include/gui/prebattlescene.ui
 
 RESOURCES += \
     gui.qrc
+
+RC_ICONS = $$PWD/assets/common/icon.ico
