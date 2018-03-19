@@ -1,0 +1,3 @@
+human-royal-archer
+human-marksman
+human-skirmisher
